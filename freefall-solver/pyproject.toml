@@ -8,6 +8,9 @@ authors = ["Marc Pfander"]
 python = "^3.9"
 Flask = "^2.0.3"
 functions-framework = "^3.0.0"
+numpy = "^1.22.2"
+pandas = "^1.4.1"
+pytest = "^7.0.1"
 
 [tool.poetry.dev-dependencies]
 
