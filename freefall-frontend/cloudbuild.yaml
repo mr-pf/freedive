@@ -1,0 +1,12 @@
+steps:
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+    dir:  'freefall-frontend'
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+    dir:  'freefall-frontend'
+  - name: 'gcr.io/freediving-83da5/firebase'
+    args:
+      - deploy
+      - --only=hosting
+    dir:  'freefall-frontend'
