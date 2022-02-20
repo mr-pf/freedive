@@ -1,0 +1,40 @@
+{
+  "divers": [
+    {
+      "mass": 66,
+      "volume_static": 0.062,
+      "volume_compressible": 0.006,
+      "drag_area": 0.07,
+      "drag_coefficient": 0.3
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "test1",
+      "start_depth": 15,
+      "start_velocity": 1.3
+    },
+    {
+      "name": "test2",
+      "start_depth": 30,
+      "start_velocity": 1.8
+    }
+  ],
+  "plot_parameters": {
+    "time_range": {
+      "min": 0,
+      "max": 10,
+      "num_points": 10
+    },
+    "depth_range": {
+      "min": 0,
+      "max": 10,
+      "num_points": 10
+    },
+    "velocity_range": {
+      "min": 0,
+      "max": 10,
+      "num_points": 10
+    }
+  }
+}
