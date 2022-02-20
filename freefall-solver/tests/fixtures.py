@@ -1,6 +1,4 @@
-import numpy as np
-
-from src.classes import PlotParameters, Diver, Scenario, PlotRange
+from classes import PlotParameters, Diver, Scenario, PlotRange
 
 PLOT_PARAMETERS = PlotParameters(
     time_range=PlotRange(0, 30, 2),

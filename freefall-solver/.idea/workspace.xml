@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e95d731-807c-40c6-90cc-9e52c2c5b428" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/unit/test_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/unit/test_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/freefall-solver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/freefall-solver.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/fixtures.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/fixtures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/request_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/request_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_equations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_solver.py" beforeDir="false" />
-    </list>
+    <list default="true" id="7e95d731-807c-40c6-90cc-9e52c2c5b428" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +69,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for surface.test_function.test_freefall_solver">
+  <component name="RunManager" selected="Python tests.pytest in tests">
     <configuration name="functions-framework" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="freefall-solver" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,15 +160,34 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in tests" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="freefall-solver" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.functions-framework" />
       <item itemvalue="Python tests.pytest for surface.test_function.test_freefall_solver" />
       <item itemvalue="Python tests.pytest in test_equations.py" />
       <item itemvalue="Python tests.pytest in test_solver.py" />
       <item itemvalue="Python tests.pytest for unit.test_main.test_execute" />
+      <item itemvalue="Python tests.pytest in tests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in tests" />
         <item itemvalue="Python tests.pytest for unit.test_main.test_execute" />
         <item itemvalue="Python tests.pytest in test_solver.py" />
         <item itemvalue="Python tests.pytest in test_equations.py" />
@@ -204,7 +208,7 @@
       <workItem from="1645303609143" duration="1667000" />
       <workItem from="1645306753801" duration="390000" />
       <workItem from="1645307626012" duration="506000" />
-      <workItem from="1645308751607" duration="19350000" />
+      <workItem from="1645308751607" duration="19963000" />
     </task>
     <servers />
   </component>

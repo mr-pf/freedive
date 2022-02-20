@@ -2,9 +2,9 @@ import numpy as np
 from scipy.integrate import odeint
 
 
-from src.classes import Diver, PlotParameters, Scenario, FreefallEquationSolution, StaticForcesSolution, \
+from classes import Diver, PlotParameters, Scenario, FreefallEquationSolution, StaticForcesSolution, \
     DynamicForcesSolution, TerminalVelocitySolution, DiverCaseSolution, PlotRange
-from src import equations
+import equations
 
 
 def solve_diver_case(diver: Diver, scenarios: list[Scenario], plot_parameters: PlotParameters) -> DiverCaseSolution:
