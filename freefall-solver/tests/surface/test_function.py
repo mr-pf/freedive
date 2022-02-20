@@ -1,6 +1,6 @@
-import requests
 import json
-from tests.fixtures import PLOT_PARAMETERS, DIVER, SCENARIOS
+
+import requests
 
 
 def test_freefall_solver():

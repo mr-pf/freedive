@@ -1,11 +1,11 @@
 import numpy as np
 
-from src.classes import PlotParameters, Diver, Scenario
+from src.classes import PlotParameters, Diver, Scenario, PlotRange
 
 PLOT_PARAMETERS = PlotParameters(
-    time_range=np.array([0, 30]),
-    depth_range=np.array([0, 10, 100]),
-    velocity_range=np.array([0, 1, 2, 3])
+    time_range=PlotRange(0, 30, 2),
+    depth_range=PlotRange(0, 100, 2),
+    velocity_range=PlotRange(0, 3, 4)
 )
 DIVER = Diver(
     mass=66,

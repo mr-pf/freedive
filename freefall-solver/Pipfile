@@ -10,6 +10,7 @@ pytest = "*"
 functions-framework = "*"
 requests = "*"
 jsonpickle = "*"
+numpy = "*"
 
 [dev-packages]
 

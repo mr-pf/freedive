@@ -24,17 +24,17 @@
     "time_range": {
       "min": 0,
       "max": 10,
-      "num_data_points": 10
+      "num_points": 10
     },
     "depth_range": {
       "min": 0,
       "max": 10,
-      "num_data_points": 10
+      "num_points": 10
     },
     "velocity_range": {
       "min": 0,
       "max": 10,
-      "num_data_points": 10
+      "num_points": 10
     }
   }
 }

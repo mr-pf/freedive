@@ -1,6 +1,5 @@
+from collections import namedtuple
 from dataclasses import dataclass
-
-import numpy as np
 
 
 @dataclass
@@ -12,11 +11,14 @@ class Diver:
     drag_coefficient: float
 
 
+PlotRange = namedtuple('PlotRange', 'min max num_points')
+
+
 @dataclass
 class PlotParameters:
-    time_range: np.ndarray
-    depth_range: np.ndarray
-    velocity_range: np.ndarray
+    time_range: PlotRange
+    depth_range: PlotRange
+    velocity_range: PlotRange
 
 
 @dataclass
@@ -26,39 +28,43 @@ class Scenario:
     start_velocity: float
 
 
+class Solution:
+    pass
+
+
 @dataclass
-class FreefallEquationSolution:
+class FreefallEquationSolution(Solution):
     scenario: Scenario
-    time: np.ndarray
-    depth: np.ndarray
-    velocity: np.ndarray
+    time: list[float]
+    depth: list[float]
+    velocity: list[float]
 
 
 @dataclass
-class StaticForcesSolution:
-    depth: np.ndarray
-    gravitational_force: np.ndarray
-    buoyant_force_constant: np.ndarray
-    buoyant_force_variable: np.ndarray
-    buoyant_force_total: np.ndarray
-    static_forces_total: np.ndarray
+class StaticForcesSolution(Solution):
+    depth: list[float]
+    gravitational_force: list[float]
+    buoyant_force_constant: list[float]
+    buoyant_force_variable: list[float]
+    buoyant_force_total: list[float]
+    static_forces_total: list[float]
 
 
 @dataclass
-class DynamicForcesSolution:
-    velocity: np.ndarray
-    drag_force: np.ndarray
+class DynamicForcesSolution(Solution):
+    velocity: list[float]
+    drag_force: list[float]
 
 
 @dataclass
-class TerminalVelocitySolution:
-    depth: np.ndarray
-    variable: np.ndarray
+class TerminalVelocitySolution(Solution):
+    depth: list[float]
+    variable: list[float]
     final: float
 
 
 @dataclass
-class DiverCaseSolution:
+class DiverCaseSolution(Solution):
     diver: Diver
     static_forces: StaticForcesSolution
     dynamic_forces: DynamicForcesSolution

@@ -1,8 +1,10 @@
+import numpy as np
 from scipy.integrate import odeint
 
-import equations
-from classes import Diver, PlotParameters, Scenario, FreefallEquationSolution, StaticForcesSolution, \
-    DynamicForcesSolution, TerminalVelocitySolution, DiverCaseSolution
+
+from src.classes import Diver, PlotParameters, Scenario, FreefallEquationSolution, StaticForcesSolution, \
+    DynamicForcesSolution, TerminalVelocitySolution, DiverCaseSolution, PlotRange
+from src import equations
 
 
 def solve_diver_case(diver: Diver, scenarios: list[Scenario], plot_parameters: PlotParameters) -> DiverCaseSolution:
@@ -16,30 +18,36 @@ def solve_diver_case(diver: Diver, scenarios: list[Scenario], plot_parameters: P
 
 
 def solve_static_forces(diver: Diver, plot_parameters: PlotParameters) -> StaticForcesSolution:
+    depth = get_linspace(plot_parameters.depth_range)
+
     return StaticForcesSolution(
-        depth=plot_parameters.depth_range,
-        gravitational_force=equations.gravitational_force(plot_parameters.depth_range, diver.mass),
-        buoyant_force_constant=equations.buoyant_force_constant(plot_parameters.depth_range, diver.volume_static),
-        buoyant_force_variable=equations.buoyant_force_variable(plot_parameters.depth_range, diver.volume_compressible),
-        buoyant_force_total=equations.buoyant_force_total(plot_parameters.depth_range, diver.volume_static,
-                                                          diver.volume_compressible),
-        static_forces_total=equations.static_forces_total(plot_parameters.depth_range, diver.mass, diver.volume_static,
-                                                          diver.volume_compressible)
+        depth=list(depth),
+        gravitational_force=list(equations.gravitational_force(depth, diver.mass)),
+        buoyant_force_constant=list(equations.buoyant_force_constant(depth, diver.volume_static)),
+        buoyant_force_variable=list(
+            equations.buoyant_force_variable(depth, diver.volume_compressible)),
+        buoyant_force_total=list(equations.buoyant_force_total(depth, diver.volume_static, diver.volume_compressible)),
+        static_forces_total=list(
+            equations.static_forces_total(depth, diver.mass, diver.volume_static, diver.volume_compressible))
     )
 
 
 def solve_dynamic_forces(diver: Diver, plot_parameters: PlotParameters) -> DynamicForcesSolution:
+    velocity = get_linspace(plot_parameters.velocity_range)
+
     return DynamicForcesSolution(
-        velocity=plot_parameters.velocity_range,
-        drag_force=equations.drag_force(plot_parameters.velocity_range, diver.drag_coefficient, diver.drag_area)
+        velocity=list(velocity),
+        drag_force=list(equations.drag_force(velocity, diver.drag_coefficient, diver.drag_area))
     )
 
 
 def solve_terminal_velocity(diver: Diver, plot_parameters: PlotParameters) -> TerminalVelocitySolution:
+    depth = get_linspace(plot_parameters.depth_range)
+
     return TerminalVelocitySolution(
-        depth=plot_parameters.depth_range,
-        variable=equations.terminal_velocity(plot_parameters.depth_range, diver.mass, diver.drag_coefficient,
-                                             diver.drag_area, diver.volume_static, diver.volume_compressible),
+        depth=list(depth),
+        variable=list(equations.terminal_velocity(depth, diver.mass, diver.drag_coefficient,
+                                                  diver.drag_area, diver.volume_static, diver.volume_compressible)),
         final=equations.terminal_velocity_final(diver.mass, diver.drag_coefficient,
                                                 diver.drag_area, diver.volume_static)
     )
@@ -50,13 +58,18 @@ def solve_freefall_equation(diver: Diver, scenario: Scenario,
     ode_system = equations.get_ode_system(mass=diver.mass, volume_static=diver.volume_static,
                                           volume_compressible=diver.volume_compressible,
                                           drag_coefficient=diver.drag_coefficient, drag_area=diver.drag_area)
+    time = get_linspace(plot_parameters.time_range)
 
     initial_conditions = [scenario.start_depth, scenario.start_velocity]
-    result = odeint(ode_system, y0=initial_conditions, t=plot_parameters.time_range, tfirst=True)
+    result = odeint(ode_system, y0=initial_conditions, t=time, tfirst=True)
 
     return FreefallEquationSolution(
         scenario=scenario,
-        time=plot_parameters.time_range,
-        depth=result.T[0],
-        velocity=result.T[1]
+        time=list(time),
+        depth=list(result.T[0]),
+        velocity=list(result.T[1])
     )
+
+
+def get_linspace(plot_range: PlotRange):
+    return np.linspace(plot_range.min, plot_range.max, plot_range.num_points)
