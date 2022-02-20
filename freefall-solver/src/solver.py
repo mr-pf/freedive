@@ -1,81 +1,17 @@
-from dataclasses import dataclass
-
-import numpy as np
-from scipy.intetgrations import odeint
+from scipy.integrate import odeint
 
 import equations
+from classes import Diver, PlotParameters, Scenario, FreefallEquationSolution, StaticForcesSolution, \
+    DynamicForcesSolution, TerminalVelocitySolution, DiverCaseSolution
 
 
-@dataclass
-class Diver:
-    mass: float
-    volume_static: float
-    volume_compressible: float
-    drag_area: float
-    drag_coefficient: float
-
-
-@dataclass
-class PlotParameters:
-    time_range: np.array
-    depth_range: np.aray
-    velocity_range: np.array
-
-
-@dataclass
-class Scenario:
-    name: str
-    start_depth: float
-    start_velocity: float
-
-
-@dataclass
-class FreefallEquationSolution:
-    scenario: Scenario
-    time: np.array
-    depth: np.array
-    velocity: np.array
-
-
-@dataclass
-class StaticForcesSolution:
-    depth: np.array
-    gravitational_force: np.array
-    buoyant_force_constant: np.array
-    buoyant_force_variable: np.array
-    buoyant_force_total: np.array
-    static_forces_total: np.array
-
-
-@dataclass
-class DynamicForcesSolution:
-    velocity: np.array
-    drag_force: np.array
-
-
-@dataclass
-class TerminalVelocitySolution:
-    depth: np.array
-    variable: np.array
-    final: float
-
-
-@dataclass
-class DiverCaseSolution:
-    diver: Diver
-    static_forces: StaticForcesSolution
-    dynamic_forces: DynamicForcesSolution
-    terminal_velocity: TerminalVelocitySolution
-    freefall_equation_solutions: list[FreefallEquationSolution]
-
-
-def solve_diver_case(diver: Diver, scenarios: list[Scenario], plot_parameters: PlotParameters):
+def solve_diver_case(diver: Diver, scenarios: list[Scenario], plot_parameters: PlotParameters) -> DiverCaseSolution:
     return DiverCaseSolution(
         diver=diver,
         static_forces=solve_static_forces(diver, plot_parameters),
         dynamic_forces=solve_dynamic_forces(diver, plot_parameters),
         terminal_velocity=solve_terminal_velocity(diver, plot_parameters),
-        freefall_equation_solutions=[solve_freefall_equation(diver, s) for s in scenarios]
+        freefall_equation_solutions=[solve_freefall_equation(diver, s, plot_parameters) for s in scenarios]
     )
 
 
@@ -109,7 +45,8 @@ def solve_terminal_velocity(diver: Diver, plot_parameters: PlotParameters) -> Te
     )
 
 
-def solve_freefall_equation(diver: Diver, scenario: Scenario, plot_parameters: PlotParameters) -> FreefallEquationSolution:
+def solve_freefall_equation(diver: Diver, scenario: Scenario,
+                            plot_parameters: PlotParameters) -> FreefallEquationSolution:
     ode_system = equations.get_ode_system(mass=diver.mass, volume_static=diver.volume_static,
                                           volume_compressible=diver.volume_compressible,
                                           drag_coefficient=diver.drag_coefficient, drag_area=diver.drag_area)

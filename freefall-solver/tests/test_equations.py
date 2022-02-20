@@ -1,6 +1,7 @@
 import numpy as np
+import pytest
 
-import equations
+from src import equations
 
 DEPTH = np.array([0, 10, 100])
 VELOCITY = np.array([0, 1, 2])
@@ -27,14 +28,14 @@ def test_buoyant_force_constant():
 
 def test_buoyant_force_variable():
     result = equations.buoyant_force_variable(DEPTH, VOLUME_COMPRESSIBLE)
-    expected = np.array([-60.23, -30.12,  -5.48])
+    expected = np.array([-60.23, -30.12, -5.48])
 
     assert np.array_equal(expected, np.round(result, 2))
 
 
 def test_buoyant_force_total():
     result = equations.buoyant_force_total(DEPTH, VOLUME_STATIC, VOLUME_COMPRESSIBLE)
-    expected = np.array([-682.61, -652.5 , -627.86])
+    expected = np.array([-682.61, -652.5, -627.86])
 
     assert np.array_equal(expected, np.round(result, 2))
 
@@ -55,9 +56,9 @@ def test_drag_force():
 
 def test_terminal_velocity():
     result = equations.terminal_velocity(DEPTH, MASS, DRAG_COEFFICIENT, DRAG_AREA, VOLUME_STATIC, VOLUME_COMPRESSIBLE)
-    expected = np.array([None, None, 1.25])
+    expected = np.array([None, None, 1.34])
 
-    result_rounded = np.array([round(v) if v else None for v in result])
+    result_rounded = np.array([round(v, 2) if v else None for v in result])
 
     assert np.array_equal(expected, result_rounded)
 
@@ -69,5 +70,15 @@ def test_terminal_velocity_final():
     assert expected == round(result, 2)
 
 
-def test_get_ode_system():
-    assert False
+@pytest.mark.parametrize('input_', [
+    ([20, 1]),
+    ([20, 1.5]),
+    ([30, 1]),
+    ([30, 1.5])
+])
+def test_get_ode_system(input_):
+    ode_system = equations.get_ode_system(MASS, VOLUME_STATIC, VOLUME_COMPRESSIBLE, DRAG_COEFFICIENT, DRAG_AREA)
+
+    result = ode_system(None, input_)
+
+    assert input_[1] == result[0]

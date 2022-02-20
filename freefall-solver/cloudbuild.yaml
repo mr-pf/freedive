@@ -6,6 +6,6 @@ steps:
   - deploy
   - freefall_solver
   - --region=europe-west1
-  - --source=./freefall-solver/
+  - --source=./freefall-solver/src
   - --trigger-http
   - --runtime=python39
