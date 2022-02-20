@@ -1,7 +1,4 @@
-import jsonpickle
-
-from json_encoder import CustomEncoder
-from src.solver import *
+from solver import *
 from tests.fixtures import PLOT_PARAMETERS, DIVER, SCENARIOS
 
 

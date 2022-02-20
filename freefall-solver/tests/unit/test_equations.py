@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from src import equations
+import equations
 
 DEPTH = np.array([0, 10, 100])
 VELOCITY = np.array([0, 1, 2])
