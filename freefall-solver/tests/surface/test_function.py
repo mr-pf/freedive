@@ -1,15 +1,13 @@
-import json
-
 import requests
+
+from fixtures import get_request_json_data
 
 
 def test_freefall_solver():
-
-    file = open('request_data.json')
-    request_data_json = json.load(file)
-
     url = 'http://localhost:8080/'
-    response = requests.post(url, json=request_data_json)
+    request_json_data = get_request_json_data()
+
+    response = requests.post(url, json=request_json_data)
 
     response_data = response.json()
 
