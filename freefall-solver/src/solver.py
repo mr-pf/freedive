@@ -7,13 +7,14 @@ from solution import FreefallEquationsSolution, StaticForcesSolution, \
     TerminalVelocitySolution, ScenarioSolution
 
 
-def solve_scenarios(diver_case: DiverCase) -> dict[int, ScenarioSolution]:
+def solve_scenarios(diver_case: DiverCase) -> list[ScenarioSolution]:
     diver, scenarios, plot_parameters = diver_case.diver, diver_case.scenarios, diver_case.plot_parameters
-    return {s.id: ScenarioSolution(
+    return [ScenarioSolution(
+        scenario_id=s.id,
         static_forces=solve_static_forces(diver, s, plot_parameters),
         terminal_velocity=solve_terminal_velocity(diver, s, plot_parameters),
         freefall_equations=solve_freefall_equation(diver, s, plot_parameters)
-    ) for s in scenarios}
+    ) for s in scenarios]
 
 
 def solve_static_forces(diver: Diver, scenario: Scenario, plot_parameters: PlotParameters) -> StaticForcesSolution:

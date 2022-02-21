@@ -1,4 +1,4 @@
-import {Diver, Scenario} from "./parameters";
+import {Diver, Scenario} from "./diver-case";
 
 
 export type FreefallEquationSolution = {

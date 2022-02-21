@@ -23,6 +23,7 @@ class TerminalVelocitySolution:
 
 @dataclass
 class ScenarioSolution:
+    scenario_id: int
     static_forces: StaticForcesSolution
     terminal_velocity: TerminalVelocitySolution
     freefall_equations: FreefallEquationsSolution

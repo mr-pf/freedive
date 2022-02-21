@@ -5,7 +5,7 @@ from tests.fixtures import PLOT_PARAMETERS, DIVER, SCENARIOS, DIVER_CASE
 def test_solve_diver_case():
     scenario_solutions = solve_scenarios(DIVER_CASE)
 
-    for i, sc in scenario_solutions.items():
+    for sc in scenario_solutions:
         assert_static_forces(sc.static_forces)
         assert_terminal_velocity(sc.terminal_velocity)
         assert_freefall_equation_solutions(sc.freefall_equations)
