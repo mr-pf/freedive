@@ -19,7 +19,7 @@ const initialState = new DiverCase(
         new PlotRange(0, 100, 100),
         new PlotRange(0, 3, 100)
     )
-)
+);
 
 
 const diverCaseSlice = createSlice({

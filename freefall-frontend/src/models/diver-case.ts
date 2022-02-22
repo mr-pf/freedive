@@ -55,7 +55,7 @@ export class Scenario {
 
 export class DiverCase {
     diver: Diver;
-    scenarios: { [id: number]: Scenario };
+    scenarios: { [scenarioId: number]: Scenario };
     plotParameters: PlotParameters;
 
     constructor(diver: Diver, scenarios: { [id: number]: Scenario }, plotParameters: PlotParameters) {

@@ -22,6 +22,7 @@ export type TerminalVelocitySolution = {
 
 
 export type DiverCaseSolution = {
+    scenarioId: number
     static_forces: StaticForcesSolution
     terminal_velocity: TerminalVelocitySolution
     freefall_equation_solutions: FreefallEquationSolution
