@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/freefall-frontend.iml" filepath="$PROJECT_DIR$/.idea/freefall-frontend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../freefall-solver/.idea/freefall-solver.iml" filepath="$PROJECT_DIR$/../freefall-solver/.idea/freefall-solver.iml" />
     </modules>
   </component>
 </project>
