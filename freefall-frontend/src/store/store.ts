@@ -1,12 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {diverCaseReducer} from "./diver-case";
-import {solutionReducer} from "./solution";
+import {solutionsReducer} from "./solution";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 export const store = configureStore({
     reducer: {
-        parameter: diverCaseReducer,
-        solution: solutionReducer,
+         diverCase: diverCaseReducer,
+         solutions: solutionsReducer,
     }
 });
 

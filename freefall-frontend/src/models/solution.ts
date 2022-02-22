@@ -10,7 +10,7 @@ export type FreefallEquationSolution = {
 
 export type StaticForcesSolution = {
     depth: number[]
-    static_forces_total: number[]
+    staticForcesTotal: number[]
 }
 
 
@@ -23,7 +23,7 @@ export type TerminalVelocitySolution = {
 
 export type DiverCaseSolution = {
     scenarioId: number
-    static_forces: StaticForcesSolution
-    terminal_velocity: TerminalVelocitySolution
-    freefall_equation_solutions: FreefallEquationSolution
+    staticForces: StaticForcesSolution
+    terminalVelocity: TerminalVelocitySolution
+    freefallEquationSolutions: FreefallEquationSolution
 }

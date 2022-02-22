@@ -2,9 +2,9 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Diver, DiverCase, PlotParameters, PlotRange, Scenario} from "../models/diver-case";
 
 
-const initialState = new DiverCase(
-    new Diver(64, 0.062, 0.006, 0.07, 0.3),
-    {
+const initialState: DiverCase = {
+    diver: new Diver(64, 0.062, 0.006, 0.07, 0.3),
+    scenarios: {
         0: new Scenario(0, 20, 1, 0),
         1: new Scenario(1, 20, 1.5, 0),
         2: new Scenario(2, 30, 1, 0),
@@ -14,12 +14,12 @@ const initialState = new DiverCase(
         6: new Scenario(2, 30, 1, 2),
         7: new Scenario(2, 30, 1.5, 2),
     },
-    new PlotParameters(
+    plotParameters: new PlotParameters(
         new PlotRange(0, 120, 100),
         new PlotRange(0, 100, 100),
         new PlotRange(0, 3, 100)
     )
-);
+};
 
 
 const diverCaseSlice = createSlice({

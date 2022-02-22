@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
 import './App.css';
+import Background from "./components/layout/Background";
+import {Container} from "@mui/material";
+import Diver from "./components/diver/Diver";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Fragment>
+            {/*<Background/>*/}
+            <Container maxWidth="md">
+                <Diver/>
+            </Container>;
+        </Fragment>
+    )
+        ;
 }
 
 export default App;

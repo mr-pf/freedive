@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {DiverCaseSolution} from "../models/solution";
 
-const initialState: { [scenarioId: number]: DiverCaseSolution } = {}
+let initialState: { [scenarioId: number]: DiverCaseSolution } = {}
 
 const solutionSlice = createSlice({
     name: 'solution',
@@ -18,4 +18,4 @@ const solutionSlice = createSlice({
 });
 
 export const solutionActions = solutionSlice.actions;
-export const solutionReducer = solutionSlice.reducer;
+export const solutionsReducer = solutionSlice.reducer;

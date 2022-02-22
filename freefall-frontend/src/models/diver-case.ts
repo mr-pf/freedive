@@ -53,14 +53,20 @@ export class Scenario {
     }
 }
 
-export class DiverCase {
+// export class DiverCase {
+//     diver: Diver;
+//     scenarios: { [scenarioId: number]: Scenario };
+//     plotParameters: PlotParameters;
+//
+//     constructor(diver: Diver, scenarios: { [id: number]: Scenario }, plotParameters: PlotParameters) {
+//         this.diver = diver;
+//         this.scenarios = scenarios;
+//         this.plotParameters = plotParameters;
+//     }
+// }
+
+export type DiverCase = {
     diver: Diver;
     scenarios: { [scenarioId: number]: Scenario };
     plotParameters: PlotParameters;
-
-    constructor(diver: Diver, scenarios: { [id: number]: Scenario }, plotParameters: PlotParameters) {
-        this.diver = diver;
-        this.scenarios = scenarios;
-        this.plotParameters = plotParameters;
-    }
 }
