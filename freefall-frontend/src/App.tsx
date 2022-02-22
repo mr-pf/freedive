@@ -1,19 +1,27 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './App.css';
-import Background from "./components/layout/Background";
-import {Container} from "@mui/material";
+import {Container, Grid} from "@mui/material";
 import Diver from "./components/diver/Diver";
+import Scenarios from "./components/scenario/Scenarios";
+import Background from "./components/layout/Background";
 
 function App() {
     return (
-        <Fragment>
-            {/*<Background/>*/}
+        <Background>
             <Container maxWidth="md">
-                <Diver/>
-            </Container>;
-        </Fragment>
-    )
-        ;
+
+                <Grid container spacing={2}>
+                    <Grid item xs={4}>
+                        <Diver/>
+                    </Grid>
+                    <Grid item xs={8}>
+                        <Scenarios/>
+                    </Grid>
+                </Grid>
+            </Container>
+        </Background>
+
+    );
 }
 
 export default App;
