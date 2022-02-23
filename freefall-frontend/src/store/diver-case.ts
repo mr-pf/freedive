@@ -10,16 +10,16 @@ const initialState: DiverCase = {
         dragArea: 0.07,
         dragCoefficient: 0.3
     },
-    scenarios: {
-        0: {id: 0, startDepth: 20, startVelocity: 1, extraWeight: 0},
-        1: {id: 1, startDepth: 20, startVelocity: 1.5, extraWeight: 0},
-        2: {id: 2, startDepth: 30, startVelocity: 1, extraWeight: 0},
-        3: {id: 3, startDepth: 30, startVelocity: 1.5, extraWeight: 0},
-        4: {id: 4, startDepth: 20, startVelocity: 1, extraWeight: 2},
-        5: {id: 5, startDepth: 20, startVelocity: 1.5, extraWeight: 2},
-        6: {id: 6, startDepth: 30, startVelocity: 1, extraWeight: 2},
-        7: {id: 7, startDepth: 30, startVelocity: 1.5, extraWeight: 2},
-    },
+    scenarios: [
+        {id: 0, startDepth: 20, startVelocity: 1, extraWeight: 0},
+        {id: 1, startDepth: 20, startVelocity: 1.5, extraWeight: 0},
+        {id: 2, startDepth: 30, startVelocity: 1, extraWeight: 0},
+        {id: 3, startDepth: 30, startVelocity: 1.5, extraWeight: 0},
+        {id: 4, startDepth: 20, startVelocity: 1, extraWeight: 2},
+        {id: 5, startDepth: 20, startVelocity: 1.5, extraWeight: 2},
+        {id: 6, startDepth: 30, startVelocity: 1, extraWeight: 2},
+        {id: 7, startDepth: 30, startVelocity: 1.5, extraWeight: 2},
+    ],
     plotParameters: {
         timeRange: {min: 0, max: 120, numPoints: 100},
         depthRange: {min: 0, max: 100, numPoints: 100},
@@ -36,11 +36,11 @@ const diverCaseSlice = createSlice({
             state.diver = action.payload;
         },
         putScenario(state, action: PayloadAction<Scenario>) {
-            const scenario = action.payload;
-            state.scenarios[scenario.id] = scenario;
+            state.scenarios.push(action.payload);
         },
-        deleteScenario(state, action: PayloadAction<number>) {
-            delete state.scenarios[action.payload];
+        deleteScenario(state, action: PayloadAction<Scenario>) {
+            console.log(action.payload)
+            state.scenarios = state.scenarios.filter(s => s.id !== action.payload.id)
         },
         setPlotParameters(state, action: PayloadAction<PlotParameters>) {
             state.plotParameters = action.payload;

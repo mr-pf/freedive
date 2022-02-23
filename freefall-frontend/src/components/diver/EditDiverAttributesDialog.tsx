@@ -13,7 +13,8 @@ import {
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {useState} from "react";
 import {diverCaseActions} from "../../store/diver-case";
-import ChangeValueSlider from "../layout/ChangeValueSlider";
+import ChangeValueSlider from "../../shared/ChangeValueSlider";
+import EditDialog, {EditDialogDisplayData} from "../../shared/EditDialog";
 
 
 const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void }) => {
@@ -58,24 +59,16 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
         )
     }
 
-    function handleClickCancel() {
+    function handleCancel() {
         props.onClose();
     }
 
-    function handleClickSave() {
+    function handleSave() {
         dispatch(diverCaseActions.setDiver(diverEdited));
         props.onClose();
     }
 
-    const displayData: {
-        label: string,
-        value: number,
-        min: number,
-        max: number,
-        step: number,
-        unit: string,
-        onChange: (value: number) => void
-    }[] = [
+    const displayData: EditDialogDisplayData[] = [
         {
             label: 'Weight',
             value: diverEdited.weight,
@@ -124,47 +117,11 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
     ]
 
     return (
-        <Dialog open={props.isOpen} onClose={handleClickCancel} fullWidth={true}>
-            <DialogTitle>Edit diver attributes</DialogTitle>
-            <DialogContent>
-                {/*<TableContainer component={Paper}>*/}
-                <Table
-                    aria-label="scenarios"
-                    size="small"
-                    sx={{
-                        [`& .${tableCellClasses.root}`]: {
-                            borderBottom: "none"
-                        }
-                    }}
-                >
-                    <TableBody>
-                        {displayData.map(d =>
-                            <TableRow
-                                key={d.label}
-                                sx={{'&:last-child td, &:last-child th': {border: 0}}}
-                            >
-                                <TableCell align="left">{d.label}</TableCell>
-                                <TableCell align="left">{d.value + ' [' + d.unit + ']'}</TableCell>
-                                <TableCell align="left">
-                                    <ChangeValueSlider
-                                        value={d.value}
-                                        min={d.min}
-                                        max={d.max}
-                                        step={d.step}
-                                        onChange={d.onChange}
-                                    />
-                                </TableCell>
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
-                {/*</TableContainer>*/}
-            </DialogContent>
-            <DialogActions>
-                <Button onClick={handleClickCancel}>Cancel</Button>
-                <Button onClick={handleClickSave}>Save</Button>
-            </DialogActions>
-        </Dialog>
+        <EditDialog title="Edit diver attributes"
+                    isOpen={props.isOpen}
+                    data={displayData}
+                    onCancel={handleCancel}
+                    onSave={handleSave}/>
     );
 }
 

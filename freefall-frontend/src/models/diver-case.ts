@@ -27,6 +27,6 @@ export type PlotParameters = {
 
 export type DiverCase = {
     diver: Diver;
-    scenarios: { [scenarioId: number]: Scenario };
+    scenarios: Scenario[];
     plotParameters: PlotParameters;
 }
