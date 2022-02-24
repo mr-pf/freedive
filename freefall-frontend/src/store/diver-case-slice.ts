@@ -11,14 +11,14 @@ const initialState: DiverCase = {
         dragCoefficient: 0.3
     },
     scenarios: [
-        {id: 0, startDepth: 20, startVelocity: 1, extraWeight: 0},
-        {id: 1, startDepth: 20, startVelocity: 1.5, extraWeight: 0},
-        {id: 2, startDepth: 30, startVelocity: 1, extraWeight: 0},
-        {id: 3, startDepth: 30, startVelocity: 1.5, extraWeight: 0},
-        {id: 4, startDepth: 20, startVelocity: 1, extraWeight: 2},
-        {id: 5, startDepth: 20, startVelocity: 1.5, extraWeight: 2},
-        {id: 6, startDepth: 30, startVelocity: 1, extraWeight: 2},
-        {id: 7, startDepth: 30, startVelocity: 1.5, extraWeight: 2},
+        {id: "0", startDepth: 20, startVelocity: 1, extraWeight: 0},
+        {id: "1", startDepth: 20, startVelocity: 1.5, extraWeight: 0},
+        {id: "2", startDepth: 30, startVelocity: 1, extraWeight: 0},
+        {id: "3", startDepth: 30, startVelocity: 1.5, extraWeight: 0},
+        {id: "4", startDepth: 20, startVelocity: 1, extraWeight: 2},
+        {id: "5", startDepth: 20, startVelocity: 1.5, extraWeight: 2},
+        {id: "6", startDepth: 30, startVelocity: 1, extraWeight: 2},
+        {id: "7", startDepth: 30, startVelocity: 1.5, extraWeight: 2},
     ],
     plotParameters: {
         timeRange: {min: 0, max: 120, numPoints: 100},

@@ -21,7 +21,7 @@ import {Fragment, useState} from "react";
 import EditScenarioDialog from "./EditScenarioDialog";
 import {Scenario} from "../../models/diver-case";
 
-const defaultScenario: Scenario = {id: 0, startDepth: 20, startVelocity: 1.5, extraWeight: 0}
+const defaultScenario: Scenario = {id: "0", startDepth: 20, startVelocity: 1.5, extraWeight: 0}
 
 const Scenarios = () => {
 
@@ -33,10 +33,10 @@ const Scenarios = () => {
 
 
     const handleAddScenario = () => {
-        const ids = scenarios.map<number>(s => s.id)
-        const newScenarioId = ids.length === 0 ? 0 : Math.max(...ids) + 1
+        const ids = scenarios.map(s => s.id)
+        const newScenarioId = ids.length === 0 ? "0" : Math.max(...ids.map(i => parseInt(i))) + 1
 
-        const newScenario = {...defaultScenario, id: newScenarioId}
+        const newScenario = {...defaultScenario, id: newScenarioId.toString()}
 
         setEditScenarioDialogProps({isOpen: true, scenario: newScenario})
     }

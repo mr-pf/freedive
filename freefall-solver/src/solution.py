@@ -2,28 +2,27 @@ from dataclasses import dataclass
 
 
 @dataclass
-class FreefallEquationsSolution:
+class FreefallEquationsSolutions:
     time: list[float]
-    depth: list[float]
-    velocity: list[float]
+    depth: dict[str: list[float]]
+    velocity: dict[str: list[float]]
 
 
 @dataclass
-class StaticForcesSolution:
+class StaticForcesSolutions:
     depth: list[float]
-    static_forces_total: list[float]
+    static_forces_total: dict[str: list[float]]
 
 
 @dataclass
-class TerminalVelocitySolution:
+class TerminalVelocitySolutions:
     depth: list[float]
-    variable: list[float]
-    final: float
+    variable: dict[str: list[float]]
+    final: dict[str, float]
 
 
 @dataclass
-class ScenarioSolution:
-    scenario_id: int
-    static_forces: StaticForcesSolution
-    terminal_velocity: TerminalVelocitySolution
-    freefall_equations: FreefallEquationsSolution
+class DiverCaseSolutions:
+    static_forces: StaticForcesSolutions
+    terminal_velocity: TerminalVelocitySolutions
+    freefall_equations: FreefallEquationsSolutions

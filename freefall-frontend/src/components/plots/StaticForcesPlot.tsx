@@ -1,33 +1,43 @@
 import {useAppSelector} from "../../store/store";
 import {Card, CardContent, CardHeader} from "@mui/material";
-import { LineChart, Line } from 'recharts';
-import {Scenario} from "../../models/diver-case";
+import {Line, LineChart, XAxis, YAxis} from 'recharts';
 
 
 const StaticForcesPlot = () => {
 
-    const getScenarioName = (scenario: Scenario) => {
-        return `depth: ${scenario.startDepth} velocity: ${scenario.startVelocity} weight: ${scenario.extraWeight}`
-    }s
-
-    const solutions = useAppSelector(state => state.solutions);
     const scenarios = useAppSelector(state => state.diverCase.scenarios);
+    const getScenarioName = (scenarioId: number) => {
+        const scenario = scenarios[scenarioId]
+        return `id:${scenarioId} sd:${scenario.startDepth} sv:${scenario.startVelocity} ew:${scenario.extraWeight}`
+    }
 
-    const depth = solutions[0].depth
-    const static_forces = solutions.map(s => {s.id: s.static_forces)
+    const solutions = useAppSelector(state => state.solutions.static_forces);
+    const depth = solutions.depth;
+    const forces = solutions.static_forces_total;
+    const scenarioIds = Object.keys(forces)
 
-    const static_foces
+    const data = depth.map((d, i) => {
+        let scenarioValues = Object.assign({}, ...scenarioIds.map((id) => ({[id]: forces[id][i]})));
+        return {
+            depth: d,
+            ...scenarioValues
+        }
+    })
 
-
+    console.log(data)
 
     return (
         <Card>
             <CardHeader title="Static forces"/>
-                <CardContent>
-                    <LineChart>
-
-                    </LineChart>
-                </CardContent>
+            <CardContent>
+                <LineChart width={500} height={300} data={data}>
+                    <XAxis dataKey="depth"/>
+                    <YAxis/>
+                    {
+                        scenarioIds.map(id => <Line type="monotone" dataKey={id} stroke="#82ca9d"/>)
+                    }
+                </LineChart>
+            </CardContent>
         </Card>
     );
 

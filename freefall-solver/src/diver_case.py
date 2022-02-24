@@ -23,7 +23,7 @@ class PlotParameters:
 
 @dataclass
 class Scenario:
-    id: int
+    id: str
     start_depth: float
     start_velocity: float
     extra_weight: float

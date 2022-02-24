@@ -1,10 +1,10 @@
 import {DiverCase} from "../models/diver-case";
-import {DiverCaseSolution} from "../models/solution";
+import {DiverCaseSolutions} from "../models/solution";
 
 const url = 'http://localhost:8080/'
 
 const getSolutions = async (diverCase: DiverCase,
-                            callbackSuccess: (solutions: DiverCaseSolution[]) => void,
+                            callbackSuccess: (solutions: DiverCaseSolutions) => void,
                             callbackError: (error: any) => void) => {
 
     const body = serializeDiverCase(diverCase)
@@ -19,7 +19,7 @@ const getSolutions = async (diverCase: DiverCase,
             body: body,
         })
         .then(response => response.json())
-        .then<DiverCaseSolution[]>(json => json)
+        .then<DiverCaseSolutions>(json => json)
         .then(solutions => {
             callbackSuccess(solutions)
         })

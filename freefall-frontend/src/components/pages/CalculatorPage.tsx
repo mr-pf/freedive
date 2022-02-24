@@ -1,9 +1,8 @@
 import Background from "../layout/Background";
 import {Container, Stack} from "@mui/material";
-import Scenarios from "../scenario/Scenarios";
 import React from "react";
-import DiverAttributes from "../diver/DiverAttributes";
 import NavBar from "../layout/NavBar";
+import StaticForcesPlot from "../plots/StaticForcesPlot";
 
 
 const CalculatorPage = () => {
@@ -15,6 +14,7 @@ const CalculatorPage = () => {
                 <Stack spacing={2}>
                     {/*<DiverAttributes/>*/}
                     {/*<Scenarios/>*/}
+                    <StaticForcesPlot/>
                 </Stack>
             </Container>
         </Background>

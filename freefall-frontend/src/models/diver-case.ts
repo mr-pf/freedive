@@ -7,7 +7,7 @@ export type Diver = {
 }
 
 export type Scenario = {
-    id: number;
+    id: string;
     startDepth: number;
     startVelocity: number;
     extraWeight: number;

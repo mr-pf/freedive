@@ -1,13 +1,17 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {DiverCaseSolution} from "../models/solution";
+import {DiverCaseSolutions} from "../models/solution";
 
-let initialState:  DiverCaseSolution[] = []
+let initialState: DiverCaseSolutions = {
+    static_forces: {depth: [], static_forces_total: {}},
+    terminal_velocity: {depth: [], variable: {}, final: {}},
+    freefall_equations: {time: [], depth: {}, velocity: {}}
+}
 
 const solutionSlice = createSlice({
     name: 'solution',
     initialState,
     reducers: {
-        putSolutions(state, action: PayloadAction<DiverCaseSolution[]>) {
+        putSolutions(state, action: PayloadAction<DiverCaseSolutions>) {
             state = action.payload
         }
     }

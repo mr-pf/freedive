@@ -15,8 +15,8 @@ DIVER = Diver(
     drag_coefficient=0.3
 )
 SCENARIOS = [
-    Scenario(id=1, start_depth=15, start_velocity=1.3, extra_weight=2),
-    Scenario(id=2, start_depth=30, start_velocity=1.8, extra_weight=2)
+    Scenario(id="1", start_depth=15, start_velocity=1.3, extra_weight=2),
+    Scenario(id="2", start_depth=30, start_velocity=1.8, extra_weight=2)
 ]
 
 DIVER_CASE = DiverCase(DIVER, SCENARIOS, PLOT_PARAMETERS)

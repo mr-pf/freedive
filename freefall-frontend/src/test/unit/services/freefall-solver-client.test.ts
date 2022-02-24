@@ -11,8 +11,8 @@ const diverCase: DiverCase = {
         dragCoefficient: 0.3
     },
     scenarios: [
-        {id: 1, startDepth: 15, startVelocity: 1.3, extraWeight: 2},
-        {id: 2, startDepth: 30, startVelocity: 1.8, extraWeight: 1},
+        {id: "1", startDepth: 15, startVelocity: 1.3, extraWeight: 2},
+        {id: "2", startDepth: 30, startVelocity: 1.8, extraWeight: 1},
     ],
     plotParameters: {
         timeRange: {min: 0, max: 30, numPoints: 2},
