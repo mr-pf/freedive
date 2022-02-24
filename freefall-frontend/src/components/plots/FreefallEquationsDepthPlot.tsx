@@ -4,23 +4,23 @@ import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XA
 import {colorPalette, reshapeData} from "./plot-helpers";
 
 
-const StaticForcesPlot = () => {
+const FreefallEquationsDepthPLot = () => {
 
     const {diver, scenarios, plotParameters} = useAppSelector(state => state.diverCase);
-    const {depth, static_forces_total: forces} = useAppSelector(state => state.solutions.static_forces);
-    const scenarioIds = Object.keys(forces)
+    const {time, depth} = useAppSelector(state => state.solutions.freefall_equations);
+    const scenarioIds = Object.keys(depth)
 
-    const data = reshapeData(depth, forces)
+    const data = reshapeData(time, depth)
 
     console.log(data)
 
     return (
         <Card>
-            <CardHeader title="Static forces"/>
+            <CardHeader title="Time vs. depth"/>
             <CardContent>
                 <ResponsiveContainer width="95%" height={300}>
                     <LineChart data={data}>
-                        <XAxis dataKey="depth" type="number" allowDecimals={false}/>
+                        <XAxis dataKey="time" type="number" allowDecimals={false}/>
                         <YAxis allowDecimals={false}/>
                         {
                             scenarioIds.map(id => <Line key={id}
@@ -44,4 +44,4 @@ const StaticForcesPlot = () => {
 
 }
 
-export default StaticForcesPlot
+export default FreefallEquationsDepthPLot

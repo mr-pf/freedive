@@ -4,24 +4,24 @@ import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XA
 import {colorPalette, reshapeData} from "./plot-helpers";
 
 
-const StaticForcesPlot = () => {
+const TerminalVelocityPLot = () => {
 
     const {diver, scenarios, plotParameters} = useAppSelector(state => state.diverCase);
-    const {depth, static_forces_total: forces} = useAppSelector(state => state.solutions.static_forces);
-    const scenarioIds = Object.keys(forces)
+    const {depth, variable, final} = useAppSelector(state => state.solutions.terminal_velocity);
+    const scenarioIds = Object.keys(variable)
 
-    const data = reshapeData(depth, forces)
+    const data = reshapeData(depth, variable)
 
     console.log(data)
 
     return (
         <Card>
-            <CardHeader title="Static forces"/>
+            <CardHeader title="Terminal velocity"/>
             <CardContent>
                 <ResponsiveContainer width="95%" height={300}>
                     <LineChart data={data}>
                         <XAxis dataKey="depth" type="number" allowDecimals={false}/>
-                        <YAxis allowDecimals={false}/>
+                        <YAxis allowDecimals={true}/>
                         {
                             scenarioIds.map(id => <Line key={id}
                                                         type="monotone"
@@ -32,6 +32,12 @@ const StaticForcesPlot = () => {
                                 />
                             )
                         }
+                        <Line points={[{x: 0, y: 0}, {x: plotParameters.depthRange.max, y: 0}]}
+                              stroke="red"
+                              dot={false}
+                              type="monotone"
+                              isAnimationActive={false}
+                        />
                         <CartesianGrid/>
                         <Tooltip/>
                         <Legend/>
@@ -44,4 +50,4 @@ const StaticForcesPlot = () => {
 
 }
 
-export default StaticForcesPlot
+export default TerminalVelocityPLot

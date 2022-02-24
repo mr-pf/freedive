@@ -12,7 +12,7 @@ const solutionSlice = createSlice({
     initialState,
     reducers: {
         putSolutions(state, action: PayloadAction<DiverCaseSolutions>) {
-            state = action.payload
+            return action.payload
         }
     }
 });

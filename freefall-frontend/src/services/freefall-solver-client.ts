@@ -18,8 +18,12 @@ const getSolutions = async (diverCase: DiverCase,
             },
             body: body,
         })
-        .then(response => response.json())
-        .then<DiverCaseSolutions>(json => json)
+        .then(response => {
+            return response.json()
+        })
+        .then<DiverCaseSolutions>(json => {
+            return json
+        })
         .then(solutions => {
             callbackSuccess(solutions)
         })

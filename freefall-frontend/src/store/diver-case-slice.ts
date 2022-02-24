@@ -21,9 +21,9 @@ const initialState: DiverCase = {
         {id: "7", startDepth: 30, startVelocity: 1.5, extraWeight: 2},
     ],
     plotParameters: {
-        timeRange: {min: 0, max: 120, numPoints: 100},
-        depthRange: {min: 0, max: 100, numPoints: 100},
-        velocityRange: {min: 0, max: 3, numPoints: 100}
+        timeRange: {min: 0, max: 120, numPoints: 121},
+        depthRange: {min: 0, max: 120, numPoints: 121},
+        velocityRange: {min: 0, max: 3, numPoints: 121}
     }
 };
 

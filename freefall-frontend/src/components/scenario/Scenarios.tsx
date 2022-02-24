@@ -85,10 +85,10 @@ const Scenarios = () => {
                                     <TableCell align="right">{s.extraWeight}</TableCell>
                                     <TableCell align="right">
                                         <Stack direction="row">
-                                            <IconButton onClick={() => handleEditScenario(s)}>
+                                            <IconButton onClick={() => handleEditScenario(s)} size="small">
                                                 <EditOutlinedIcon/>
                                             </IconButton>
-                                            <IconButton onClick={() => handleDeleteScenario(s)}>
+                                            <IconButton onClick={() => handleDeleteScenario(s)} size="small">
                                                 <ClearOutlinedIcon/>
                                             </IconButton>
                                         </Stack>
@@ -99,7 +99,9 @@ const Scenarios = () => {
                     </Table>
                 </CardContent>
                 <CardActions>
-                    <IconButton aria-label="Show instructions" onClick={handleAddScenario}>
+                    <IconButton aria-label="Show instructions"
+                                onClick={handleAddScenario}
+                                disabled={scenarios.length >= 8}>
                         <AddCircleOutlineOutlinedIcon/>
                     </IconButton>
                 </CardActions>
