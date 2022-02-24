@@ -1,7 +1,7 @@
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {useEffect, useState} from "react";
-import {diverCaseActions} from "../../store/diver-case";
-import EditDialog, {EditDialogDisplayData} from "../../shared/EditDialog";
+import {diverCaseActions} from "../../store/diver-case-slice";
+import EditDialog, {EditDialogDisplayData} from "../shared/EditDialog";
 import {Scenario} from "../../models/diver-case";
 
 

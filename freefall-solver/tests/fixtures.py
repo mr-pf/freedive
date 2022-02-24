@@ -25,3 +25,4 @@ DIVER_CASE = DiverCase(DIVER, SCENARIOS, PLOT_PARAMETERS)
 def get_request_json_data():
     file = open('request_data.json')
     return json.load(file)
+

@@ -16,7 +16,7 @@ import {useAppDispatch, useAppSelector} from "../../store/store";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
-import {diverCaseActions} from "../../store/diver-case";
+import {diverCaseActions} from "../../store/diver-case-slice";
 import {Fragment, useState} from "react";
 import EditScenarioDialog from "./EditScenarioDialog";
 import {Scenario} from "../../models/diver-case";

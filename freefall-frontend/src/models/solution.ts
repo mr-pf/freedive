@@ -1,6 +1,3 @@
-import {Diver, Scenario} from "./diver-case";
-
-
 export type FreefallEquationSolution = {
     time: number[]
     depth: number[]
@@ -10,20 +7,20 @@ export type FreefallEquationSolution = {
 
 export type StaticForcesSolution = {
     depth: number[]
-    staticForcesTotal: number[]
+    static_forces_total: number[]
 }
 
 
 export type TerminalVelocitySolution = {
     depth: number[]
-    variable: number[]
+    variable: (number | null)[]
     final: number
 }
 
 
 export type DiverCaseSolution = {
     scenarioId: number
-    staticForces: StaticForcesSolution
-    terminalVelocity: TerminalVelocitySolution
-    freefallEquationSolutions: FreefallEquationSolution
+    static_forces: StaticForcesSolution
+    terminal_velocity: TerminalVelocitySolution
+    freefall_equations: FreefallEquationSolution
 }

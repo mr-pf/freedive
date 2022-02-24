@@ -1,21 +1,32 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
-import {Container, Stack} from "@mui/material";
-import DiverAttributes from "./components/diver/DiverAttributes";
-import Scenarios from "./components/scenario/Scenarios";
-import Background from "./components/layout/Background";
+import TheoryPAge from "./components/pages/TheoryPage";
+import CalculatorPage from "./components/pages/CalculatorPage";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {CALCULATOR_ROUTE, HOME_ROUTE, THEORY_ROUTE, UNKNOWN_ROUTE} from "./constants/routes";
+import {useAppSelector} from "./store/store";
+import {useDispatch} from "react-redux";
+import {getSolutionsAction} from "./store/actions";
 
 function App() {
-    return (
-        <Background>
-            <Container maxWidth="sm">
-                <Stack spacing={2}>
-                    {/*<DiverAttributes/>*/}
-                    <Scenarios/>
-                </Stack>
-            </Container>
-        </Background>
 
+    const diverCase = useAppSelector(state => state.diverCase)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getSolutionsAction(diverCase))
+    }, [diverCase])
+
+
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path={HOME_ROUTE} element={<Navigate to={CALCULATOR_ROUTE}/>}/>
+                <Route path={CALCULATOR_ROUTE} element={<CalculatorPage/>}/>
+                <Route path={THEORY_ROUTE} element={<TheoryPAge/>}/>
+                <Route path={UNKNOWN_ROUTE} element={<Navigate to={CALCULATOR_ROUTE}/>}/>
+            </Routes>
+        </BrowserRouter>
     );
 }
 

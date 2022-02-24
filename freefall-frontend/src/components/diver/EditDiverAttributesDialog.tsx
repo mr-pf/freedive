@@ -1,20 +1,8 @@
-import {
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogTitle,
-    Table,
-    TableBody,
-    TableCell,
-    tableCellClasses,
-    TableRow
-} from "@mui/material";
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {useState} from "react";
-import {diverCaseActions} from "../../store/diver-case";
-import ChangeValueSlider from "../../shared/ChangeValueSlider";
-import EditDialog, {EditDialogDisplayData} from "../../shared/EditDialog";
+import {diverCaseActions} from "../../store/diver-case-slice";
+import EditDialog, {EditDialogDisplayData} from "../shared/EditDialog";
+import {getSolutionsAction} from "../../store/actions";
 
 
 const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void }) => {

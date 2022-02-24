@@ -1,7 +1,41 @@
 import {DiverCase} from "../models/diver-case";
 import {DiverCaseSolution} from "../models/solution";
 
+const url = 'http://localhost:8080/'
 
-export const getSolution = (diverCase: DiverCase) => {
+const getSolutions = async (diverCase: DiverCase,
+                            callbackSuccess: (solutions: DiverCaseSolution[]) => void,
+                            callbackError: (error: any) => void) => {
 
+    const body = serializeDiverCase(diverCase)
+
+    const response = await fetch(
+        url,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: body,
+        })
+        .then(response => response.json())
+        .then<DiverCaseSolution[]>(json => json)
+        .then(solutions => {
+            callbackSuccess(solutions)
+        })
+        .catch(error => {
+            callbackError(error)
+        })
 }
+
+
+export const serializeDiverCase = (diverCase: DiverCase) => {
+
+    const camelToSnakeCase = (text: string) => text.replace(/[A-Z]/g, c => `_${c.toLowerCase()}`);
+
+    const jsonString = JSON.stringify(diverCase)
+    return camelToSnakeCase(jsonString)
+}
+
+
+export default getSolutions;

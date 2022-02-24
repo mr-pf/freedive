@@ -1,7 +1,7 @@
 from diver_case import Diver, PlotRange, PlotParameters, Scenario, DiverCase
 
 
-def parse_diver_case(json_data) -> tuple[Diver, list[Scenario], PlotParameters]:
+def parse_diver_case(json_data) -> DiverCase:
     diver = Diver(**json_data['diver'])
     scenarios = [Scenario(**s) for s in json_data['scenarios']]
     plot_parameters = PlotParameters(
