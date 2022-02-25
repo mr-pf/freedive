@@ -22,17 +22,35 @@ const NavBar = () => {
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Typography
-                        variant="h5"
-                        component="div"
-                        sx={{mr: 2}}
-                    >
-                        Freefall physics
-                    </Typography>
+                <Toolbar>
+                        <Typography
+                            variant="h5"
+                            sx={{mr: 2}}
+                            color="text.primary"
+                        >
+                            Freefall Physics
+                        </Typography>
 
-                    <Button variant="text" onClick={handleGoToCalculator} color="secondary">Calculator</Button>
-                    <Button variant="text" onClick={handleGoToTheory} color="secondary">Theory</Button>
+
+                    <Button variant="text" onClick={handleGoToCalculator} >
+                        <Typography
+                            variant="subtitle2"
+                            component="div"
+                            sx={{mr: 2}}
+                            color="text.primary"
+                        >
+                            Calculator
+                        </Typography>
+                    </Button>
+                    <Button variant="text" onClick={handleGoToTheory} >
+                        <Typography
+                            component="div"
+                            sx={{mr: 2}}
+                            color="text.primary"
+                        >
+                            Theory
+                        </Typography>
+                    </Button>
                 </Toolbar>
             </Container>
         </AppBar>

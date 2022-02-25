@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e95d731-807c-40c6-90cc-9e52c2c5b428" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/FreefallEquationsDepthPlot.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/FreefallEquationsVelocityPlot.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/TerminalVelocityPlot.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/plot-helpers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../freefall-frontend/src/constants/layout-constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/assets/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/assets/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/diver/DiverAttributes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/diver/DiverAttributes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/layout/Background.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/layout/Background.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/layout/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/layout/NavBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/pages/CalculatorPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/pages/CalculatorPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/FreefallEquationsDepthPlot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/FreefallEquationsDepthPlot.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/StaticForcesPlot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/StaticForcesPlot.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/scenario/Scenarios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/scenario/Scenarios.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/constants/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/constants/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/services/freefall-solver-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/services/freefall-solver-client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/store/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/store/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/store/diver-case-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/store/diver-case-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/store/solution-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/store/solution-slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +70,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20220224_0003" />
+    <property name="com.google.cloudcode.ide_session_index" value="20220224_0004" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../skill-forest/firebase/hosting" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />

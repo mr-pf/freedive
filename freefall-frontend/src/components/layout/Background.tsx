@@ -8,7 +8,9 @@ const Background: React.FC = (props) => {
     return <Box sx={{
         backgroundImage: `url(${background})`,
         backgroundAttachment: 'sticky',
-        position: 'fixed', bottom: 0, left: 0, right: 0, top: 0
+        bottom: 0, left: 0, right: 0, top: 0,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
     }}>
         {props.children}
     </Box>
