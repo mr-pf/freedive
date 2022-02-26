@@ -11,7 +11,7 @@
       <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/scenario/Scenarios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/scenario/Scenarios.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudbuild.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudbuild.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +242,7 @@
       <workItem from="1645303609143" duration="1667000" />
       <workItem from="1645306753801" duration="390000" />
       <workItem from="1645307626012" duration="506000" />
-      <workItem from="1645308751607" duration="45155000" />
+      <workItem from="1645308751607" duration="46316000" />
     </task>
     <servers />
   </component>
