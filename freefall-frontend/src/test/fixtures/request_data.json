@@ -8,16 +8,16 @@
   },
   "scenarios": [
     {
-      "id": "1",
+      "id": 1,
       "start_depth": 15,
       "start_velocity": 1.3,
       "extra_weight": 2
     },
     {
-      "id": "2",
+      "id": 2,
       "start_depth": 30,
       "start_velocity": 1.8,
-      "extra_weight": 2
+      "extra_weight": 1
     }
   ],
   "plot_parameters": {

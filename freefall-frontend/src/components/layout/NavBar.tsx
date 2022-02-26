@@ -1,0 +1,59 @@
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import {useNavigate} from "react-router-dom";
+import {Button, Container} from "@mui/material";
+import {CALCULATOR_ROUTE, THEORY_ROUTE} from "../../constants/routes";
+
+
+const NavBar = () => {
+
+    let navigate = useNavigate();
+
+    const handleGoToCalculator = () => {
+        navigate(CALCULATOR_ROUTE);
+    }
+
+    const handleGoToTheory = () => {
+        navigate(THEORY_ROUTE);
+    }
+
+    return (
+        <AppBar position="static">
+            <Container maxWidth="xl">
+                <Toolbar>
+                        <Typography
+                            variant="h5"
+                            sx={{mr: 2}}
+                            color="text.primary"
+                        >
+                            Freefall Physics
+                        </Typography>
+
+
+                    <Button variant="text" onClick={handleGoToCalculator} >
+                        <Typography
+                            variant="subtitle2"
+                            component="div"
+                            sx={{mr: 2}}
+                            color="text.primary"
+                        >
+                            Calculator
+                        </Typography>
+                    </Button>
+                    <Button variant="text" onClick={handleGoToTheory} >
+                        <Typography
+                            component="div"
+                            sx={{mr: 2}}
+                            color="text.primary"
+                        >
+                            Theory
+                        </Typography>
+                    </Button>
+                </Toolbar>
+            </Container>
+        </AppBar>
+    );
+};
+export default NavBar;
