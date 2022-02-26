@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e95d731-807c-40c6-90cc-9e52c2c5b428" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/pages/TheoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/pages/TheoryPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/diver/EditDiverAttributesDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/diver/EditDiverAttributesDialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudbuild.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudbuild.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/fixtures.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/fixtures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/unit/test_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../instructor-thesis/freefall.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../instructor-thesis/freefall.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20220225_0005" />
+    <property name="com.google.cloudcode.ide_session_index" value="20220226_0000" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../skill-forest/firebase/hosting" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -80,7 +80,7 @@
       <recent name="$PROJECT_DIR$/tests/surface" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in tests">
+  <component name="RunManager" selected="Python tests.pytest for unit.test_solver.test_solve_diver_case">
     <configuration name="functions-framework" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="freefall-solver" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -216,10 +216,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for unit.test_solver.test_solve_diver_case" />
         <item itemvalue="Python tests.pytest in tests" />
         <item itemvalue="Python tests.pytest in unit" />
         <item itemvalue="Python tests.pytest for surface.test_function.test_freefall_solver_empty_data_returns_500" />
-        <item itemvalue="Python tests.pytest for unit.test_solver.test_solve_diver_case" />
         <item itemvalue="Python tests.pytest for unit.test_json_encoder.test_json_encoder" />
       </list>
     </recent_temporary>
@@ -238,7 +238,7 @@
       <workItem from="1645303609143" duration="1667000" />
       <workItem from="1645306753801" duration="390000" />
       <workItem from="1645307626012" duration="506000" />
-      <workItem from="1645308751607" duration="48937000" />
+      <workItem from="1645308751607" duration="52595000" />
     </task>
     <servers />
   </component>
@@ -272,7 +272,7 @@
     <SUITE FILE_PATH="coverage/freefall_solver$pytest_for_unit_test_json_parsing_test_parse_diver_case.coverage" NAME="pytest for unit.test_json_parsing.test_parse_diver_case Coverage Results" MODIFIED="1645479176091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/freefall_solver$pytest_for_surface_test_function_test_freefall_solver_empty_data_returns_500.coverage" NAME="pytest for surface.test_function.test_freefall_solver_empty_data_returns_500 Coverage Results" MODIFIED="1645671627447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/freefall_solver$pytest_for_unit_test_main_test_execute.coverage" NAME="pytest for unit.test_main.test_execute Coverage Results" MODIFIED="1645328051616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/freefall_solver$pytest_for_unit_test_solver_test_solve_diver_case.coverage" NAME="pytest for unit.test_solver.test_solve_diver_case Coverage Results" MODIFIED="1645671586832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/freefall_solver$pytest_for_unit_test_solver_test_solve_diver_case.coverage" NAME="pytest for unit.test_solver.test_solve_diver_case Coverage Results" MODIFIED="1645884002804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/freefall_solver$pytest_for_unit_test_json_encoder_test_json_encoder.coverage" NAME="pytest for unit.test_json_encoder.test_json_encoder Coverage Results" MODIFIED="1645671377305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>
