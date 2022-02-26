@@ -34,7 +34,7 @@ const NavBar = () => {
                     <Link
                         href="https://github.com/mr-pf/freedive/blob/master/instructor-thesis/freefall.ipynb"
                         target="_blank">
-                        Theory on Github
+                        Theory
                     </Link>
 
                 </Toolbar>
