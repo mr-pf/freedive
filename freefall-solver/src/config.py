@@ -2,5 +2,5 @@ import os
 
 
 def environment():
-    return os.environ['ENVIRONMENT']
+    return os.environ.get('ENVIRONMENT', 'dev')
 
