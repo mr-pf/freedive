@@ -15,7 +15,7 @@ const CalculatorPage = () => {
     return (
         <Background>
             <NavBar/>
-            <Container maxWidth="sm" sx={{opacity: 0.8}}>
+            <Container maxWidth="md" sx={{opacity: 0.8}}>
                 <Box m={2}>
                     <Stack spacing={2}>
                         <DiverAttributes/>

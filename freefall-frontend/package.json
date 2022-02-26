@@ -17,6 +17,8 @@
     "@types/react-dom": "^17.0.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-jupyter-notebook": "^0.3.2",
+    "react-markdown": "^8.0.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
@@ -24,7 +26,8 @@
     "recharts": "^2.1.9",
     "redux": "^4.1.2",
     "typescript": "^4.5.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.69.1"
   },
   "scripts": {
     "start": "react-scripts start",
