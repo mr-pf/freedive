@@ -67,14 +67,14 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
             tooltip: "The weight of the diver without any added weights."
         },
         {
-            label: 'Total volume',
+            label: 'Static volume',
             value: diverEdited.volumeStatic * 1000,
             min: 0,
             max: 150,
             step: 1,
             unit: 'l',
             onChange: updateVolumeStatic,
-            tooltip: "The total volume of the diver."
+            tooltip: "The total volume of the diver without air-filled spaces."
         },
         {
             label: 'Compressible volume',

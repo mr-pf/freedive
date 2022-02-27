@@ -29,7 +29,7 @@ const ChangeValueSlider = (
             <IconButton onClick={decrementValue}>
                 <RemoveCircleOutlineOutlinedIcon/>
             </IconButton>
-            <Slider sx={{minWidth: 150}}
+            <Slider sx={{minWidth: 100}}
                     value={value}
                     min={props.min}
                     max={props.max}

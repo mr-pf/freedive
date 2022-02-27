@@ -3,22 +3,25 @@ from dataclasses import dataclass
 
 @dataclass
 class FreefallEquationsSolutions:
+    scenario_ids: list[str]
     time: list[float]
-    depth: dict[str: list[float]]
-    velocity: dict[str: list[float]]
+    depth: list[list[float]]
+    velocity: list[list[float]]
 
 
 @dataclass
 class StaticForcesSolutions:
+    weights: list[float]
     depth: list[float]
-    static_forces_total: dict[str: list[float]]
+    static_forces_total: list[list[float]]
 
 
 @dataclass
 class TerminalVelocitySolutions:
+    weights: list[float]
     depth: list[float]
-    variable: dict[str: list[float]]
-    final: dict[str, float]
+    variable: list[list[float]]
+    final: list[float]
 
 
 @dataclass

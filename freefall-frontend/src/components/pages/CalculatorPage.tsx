@@ -5,7 +5,7 @@ import StaticForcesPlot from "../plots/StaticForcesPlot";
 import TerminalVelocityPlot from "../plots/TerminalVelocityPlot";
 import DiverAttributes from "../diver/DiverAttributes";
 import Scenarios from "../scenario/Scenarios";
-import FreefallEquationsDepthPLot from "../plots/FreefallEquationsDepthPlot";
+import FreefallEquationsDepthPlot from "../plots/FreefallEquationsDepthPlot";
 import FreefallEquationsVelocityPLot from "../plots/FreefallEquationsVelocityPlot";
 import Background from "../layout/Background";
 
@@ -28,7 +28,7 @@ const CalculatorPage = () => {
                         <Grid item lg={6} md={6} sm={12} xs={12}>
                             <Stack spacing={2}>
                                 <Scenarios/>
-                                <FreefallEquationsDepthPLot/>
+                                <FreefallEquationsDepthPlot/>
                                 <FreefallEquationsVelocityPLot/>
                             </Stack>
                         </Grid>

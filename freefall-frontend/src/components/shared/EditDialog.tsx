@@ -37,7 +37,7 @@ const EditDialog = (props: {
 
 
     return (
-        <Dialog open={props.isOpen} onClose={props.onCancel} fullWidth={true}>
+        <Dialog open={props.isOpen} onClose={props.onCancel}>
             <DialogTitle>{props.title}</DialogTitle>
             <DialogContent>
                 <Table
@@ -59,7 +59,7 @@ const EditDialog = (props: {
                                         <div>{d.label}</div>
                                         <Tooltip title={d.tooltip}>
                                             <HelpOutlineOutlinedIcon
-                                                sx={{width: 17, height: 17, verticalAlign: "bottom"}}/>
+                                                sx={{width: 14, height: 14, verticalAlign: "bottom"}}/>
                                         </Tooltip>
                                     </Stack>
                                 </TableCell>

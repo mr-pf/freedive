@@ -1,16 +1,19 @@
 import {useAppSelector} from "../../store/store";
 import {Card, CardContent, CardHeader} from "@mui/material";
 import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts';
-import {colorPalette, reshapeData} from "./plot-helpers";
+import {colorPalette2, getScenarioName, reshapeData} from "./plot-helpers";
 
 
-const FreefallEquationsDepthPLot = () => {
+const FreefallEquationsDepthPlot = () => {
 
     const {diver, scenarios, plotParameters} = useAppSelector(state => state.diverCase);
-    const {time, depth} = useAppSelector(state => state.solutions.freefall_equations);
-    const scenarioIds = Object.keys(depth)
+    const {scenario_ids, time, depth} = useAppSelector(state => state.solutions.freefall_equations);
 
-    const data = reshapeData(time, depth)
+    const scenariosById = Object.assign({}, ...scenarios.map(s => ({[s.id]: s})))
+    console.log(scenariosById)
+    const labels = scenario_ids.map(i => getScenarioName(scenariosById[i]))
+
+    const data = reshapeData(time, depth, labels)
 
     console.log(data)
 
@@ -18,17 +21,17 @@ const FreefallEquationsDepthPLot = () => {
         <Card>
             <CardHeader title="Time vs. depth"/>
             <CardContent>
-                <ResponsiveContainer width="95%" height={300}>
+                <ResponsiveContainer width="95%" height={230}>
                     <LineChart data={data}>
                         <XAxis dataKey="time" type="number" allowDecimals={false}/>
                         <YAxis allowDecimals={false}/>
                         {
-                            scenarioIds.map(id => <Line key={id}
-                                                        type="monotone"
-                                                        stroke={colorPalette[id]}
-                                                        dataKey={id}
-                                                        dot={false}
-                                                        isAnimationActive={false}
+                            scenario_ids.map((l, i) => <Line key={i}
+                                                             type="monotone"
+                                                             stroke={colorPalette2[i]}
+                                                             dataKey={l}
+                                                             dot={false}
+                                                             isAnimationActive={false}
                                 />
                             )
                         }
@@ -44,4 +47,4 @@ const FreefallEquationsDepthPLot = () => {
 
 }
 
-export default FreefallEquationsDepthPLot
+export default FreefallEquationsDepthPlot

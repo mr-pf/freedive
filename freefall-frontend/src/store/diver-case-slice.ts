@@ -13,8 +13,8 @@ const initialState: DiverCase = {
     scenarios: [
         {id: "0", startDepth: 20, startVelocity: 1.4, extraWeight: 0},
         {id: "1", startDepth: 20, startVelocity: 0.8, extraWeight: 0},
-        {id: "2", startDepth: 30, startVelocity: 1.4, extraWeight: 0},
-        {id: "3", startDepth: 30, startVelocity: 0.8, extraWeight: 0},
+        {id: "2", startDepth: 30, startVelocity: 1.4, extraWeight: 1},
+        {id: "3", startDepth: 30, startVelocity: 0.8, extraWeight: 1},
     ],
     plotParameters: {
         timeRange: {min: 0, max: 120, numPoints: 121},
