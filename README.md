@@ -6,4 +6,4 @@ The thesis can be found [here](https://github.com/mr-pf/freedive/blob/master/ins
 
 The web-app is currently hosted [here](https://freediving-83da5.web.app/)
 
-The source code consists of the [freefal-solver](https://github.com/mr-pf/freedive/tree/master/freefall-solver )google cloud function and the [freefall-frontend](https://github.com/mr-pf/freedive/tree/master/freefall-frontend) written with react.
+The source code consists of the [freefal-solver](https://github.com/mr-pf/freedive/tree/master/freefall-solver ), agoogle cloud function, and the [freefall-frontend](https://github.com/mr-pf/freedive/tree/master/freefall-frontend) written with react.
