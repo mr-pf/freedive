@@ -1,4 +1,4 @@
-# freedive
+# The physics of freefall during freediving
 
 During the AIDA freediving instructor course I wrote my thesis on the physics of the freefall. The results were interesting and I had ample time on my hands and so I decided to turn this into a web application to calculate and plot the movement and force equations that are releveant during freefall.
 
