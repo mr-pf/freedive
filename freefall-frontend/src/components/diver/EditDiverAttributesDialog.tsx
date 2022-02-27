@@ -2,7 +2,6 @@ import {useAppDispatch, useAppSelector} from "../../store/store";
 import {useState} from "react";
 import {diverCaseActions} from "../../store/diver-case-slice";
 import EditDialog, {EditDialogDisplayData} from "../shared/EditDialog";
-import {getSolutionsAction} from "../../store/actions";
 
 
 const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void }) => {
@@ -64,25 +63,28 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
             max: 150,
             step: 1,
             unit: 'Kg',
-            onChange: updateWeight
+            onChange: updateWeight,
+            tooltip: "The weight of the diver without any added weights."
         },
         {
-            label: 'Volume static',
+            label: 'Static volume',
             value: diverEdited.volumeStatic * 1000,
             min: 0,
             max: 150,
             step: 1,
             unit: 'l',
-            onChange: updateVolumeStatic
+            onChange: updateVolumeStatic,
+            tooltip: "The total volume of the diver without air-filled spaces."
         },
         {
-            label: 'Volume compressible',
+            label: 'Compressible volume',
             value: diverEdited.volumeCompressible * 1000,
             min: 0,
             max: 10,
             step: 0.5,
             unit: 'm³',
-            onChange: updateVolumeCompressible
+            onChange: updateVolumeCompressible,
+            tooltip: "The volume of air-filled spaces at the surface. This is roughly the total lung capacity."
         },
         {
             label: 'Drag Area',
@@ -91,7 +93,10 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
             max: 0.12,
             step: 0.005,
             unit: 'm²',
-            onChange: updateDragArea
+            onChange: updateDragArea,
+            tooltip: "The area the diver presents in falling direction." +
+                " Imagine you look from the bottom weight to the diver approaching you in freefall." +
+                " The area they cover from that perspective is the drag area."
         },
         {
             label: 'Drag coefficient',
@@ -100,7 +105,8 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
             max: 0.4,
             step: 0.01,
             unit: '',
-            onChange: updateDragCoefficient
+            onChange: updateDragCoefficient,
+            tooltip: "A coefficient that indicates how much resistance the shape and surface of the diver generates."
         }
     ]
 
@@ -109,7 +115,8 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
                     isOpen={props.isOpen}
                     data={displayData}
                     onCancel={handleCancel}
-                    onSave={handleSave}/>
+                    onSave={handleSave}
+        />
     );
 }
 

@@ -9,3 +9,5 @@ steps:
   - --source=./freefall-solver/src
   - --trigger-http
   - --runtime=python39
+  - --set-env-vars
+  - ENVIRONMENT=prod

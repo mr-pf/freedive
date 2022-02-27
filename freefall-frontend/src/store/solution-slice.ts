@@ -2,9 +2,9 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {DiverCaseSolutions} from "../models/solution";
 
 let initialState: DiverCaseSolutions = {
-    static_forces: {depth: [], static_forces_total: {}},
-    terminal_velocity: {depth: [], variable: {}, final: {}},
-    freefall_equations: {time: [], depth: {}, velocity: {}}
+    static_forces: {weights: [], depth: [], static_forces_total: []},
+    terminal_velocity: {weights: [], depth: [], variable: [], final: []},
+    freefall_equations: {scenario_ids: [], time: [], depth: [], velocity: []}
 }
 
 const solutionSlice = createSlice({

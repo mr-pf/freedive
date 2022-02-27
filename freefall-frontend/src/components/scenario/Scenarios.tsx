@@ -85,11 +85,11 @@ const Scenarios = () => {
                                     <TableCell align="right">{s.extraWeight}</TableCell>
                                     <TableCell align="right">
                                         <Stack direction="row">
-                                            <IconButton onClick={() => handleEditScenario(s)}>
-                                                <EditOutlinedIcon sx={{width: 18, height: 18,}}/>
+                                            <IconButton onClick={() => handleEditScenario(s)} sx={{width: 30, height: 13}}>
+                                                <EditOutlinedIcon sx={{width: 15, height: 15}}/>
                                             </IconButton>
-                                            <IconButton onClick={() => handleDeleteScenario(s)} size="small">
-                                                <ClearOutlinedIcon sx={{width: 18, height: 18,}}/>
+                                            <IconButton onClick={() => handleDeleteScenario(s)} sx={{width: 30, height: 15}}>
+                                                <ClearOutlinedIcon sx={{width: 15, height: 15}}/>
                                             </IconButton>
                                         </Stack>
                                     </TableCell>

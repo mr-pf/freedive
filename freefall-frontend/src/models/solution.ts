@@ -1,22 +1,22 @@
 export type FreefallEquationSolutions = {
+    scenario_ids: string[]
     time: number[]
-    depth:  {[scenarioId: string]: number[]}
-    velocity:  {[scenarioId: string]: number[]}
+    depth: number[][]
+    velocity: number[][]
 }
-
 
 export type StaticForcesSolutions = {
+    weights: number[]
     depth: number[]
-    static_forces_total: {[scenarioId: string]: number[]}
+    static_forces_total: number[][]
 }
-
 
 export type TerminalVelocitySolutions = {
+    weights: number[]
     depth: number[]
-    variable: {[scenarioId: string]: (number | null)[]}
-    final: {[scenarioId: string]: number}
+    variable: (number | null)[][]
+    final: number[]
 }
-
 
 export type DiverCaseSolutions = {
     static_forces: StaticForcesSolutions

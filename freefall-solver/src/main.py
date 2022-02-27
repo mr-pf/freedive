@@ -1,8 +1,8 @@
 import traceback
 
 import flask
-from flask_cors import cross_origin
 
+from flask_cors import cross_origin
 import json_encoder
 from json_parsing import parse_diver_case
 from solver import solve_diver_case

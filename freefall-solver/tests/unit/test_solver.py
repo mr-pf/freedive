@@ -1,5 +1,5 @@
+from fixtures import DIVER_CASE, PLOT_PARAMETERS, SCENARIOS
 from solver import *
-from tests.fixtures import PLOT_PARAMETERS, DIVER_CASE
 
 
 def test_solve_diver_case():
@@ -11,17 +11,31 @@ def test_solve_diver_case():
 
 
 def assert_freefall_equation_solutions(solution: FreefallEquationsSolutions):
-    assert len(solution.time) == PLOT_PARAMETERS.time_range.num_points
-    assert len(solution.depth) == 2
-    assert len(solution.velocity) == 2
+    assert len(solution.time) == PLOT_PARAMETERS.time_range.num_points + 1
+    assert len(solution.depth) == 4
+    assert len(solution.velocity) == 4
+    for s in SCENARIOS:
+        assert s.id in solution.scenario_ids
+
+    assert solution.time[0] == 0
+
+    for d in solution.depth:
+        assert d[0] == 0
+
+    for i, v in enumerate(solution.velocity):
+        assert v[0] == SCENARIOS[i].start_velocity
 
 
 def assert_terminal_velocity(solution: TerminalVelocitySolutions):
     assert len(solution.depth), PLOT_PARAMETERS.depth_range.num_points
     assert len(solution.variable) == 2
     assert len(solution.final) == 2
+    for total_weight in [64, 66]:
+        assert total_weight in solution.weights
 
 
 def assert_static_forces(solution: StaticForcesSolutions):
     assert len(solution.depth) == PLOT_PARAMETERS.depth_range.num_points
     assert len(solution.static_forces_total) == 2
+    for total_weight in [64, 66]:
+        assert total_weight in solution.weights

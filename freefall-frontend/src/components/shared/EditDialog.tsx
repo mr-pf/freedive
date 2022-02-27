@@ -3,13 +3,15 @@ import {
     Dialog,
     DialogActions,
     DialogContent,
-    DialogTitle,
+    DialogTitle, Stack,
     Table,
     TableBody,
     TableCell,
     tableCellClasses,
-    TableRow
+    TableRow,
+    Tooltip
 } from "@mui/material";
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import ChangeValueSlider from "./ChangeValueSlider";
 
 
@@ -20,7 +22,8 @@ export type EditDialogDisplayData = {
     max: number,
     step: number,
     unit: string,
-    onChange: (value: number) => void
+    onChange: (value: number) => void,
+    tooltip: string,
 }
 
 
@@ -29,15 +32,14 @@ const EditDialog = (props: {
     isOpen: boolean,
     onCancel: () => void,
     onSave: () => void,
-    data: EditDialogDisplayData[]
+    data: EditDialogDisplayData[],
 }) => {
 
 
     return (
-        <Dialog open={props.isOpen} onClose={props.onCancel} fullWidth={true}>
+        <Dialog open={props.isOpen} onClose={props.onCancel}>
             <DialogTitle>{props.title}</DialogTitle>
             <DialogContent>
-                {/*<TableContainer component={Paper}>*/}
                 <Table
                     size="small"
                     sx={{
@@ -52,7 +54,15 @@ const EditDialog = (props: {
                                 key={d.label}
                                 sx={{'&:last-child td, &:last-child th': {border: 0}}}
                             >
-                                <TableCell align="left">{d.label}</TableCell>
+                                <TableCell align="left">
+                                    <Stack direction={"row"} spacing={1}>
+                                        <div>{d.label}</div>
+                                        <Tooltip title={d.tooltip}>
+                                            <HelpOutlineOutlinedIcon
+                                                sx={{width: 14, height: 14, verticalAlign: "bottom"}}/>
+                                        </Tooltip>
+                                    </Stack>
+                                </TableCell>
                                 <TableCell align="left">{d.value + ' [' + d.unit + ']'}</TableCell>
                                 <TableCell align="left">
                                     <ChangeValueSlider
@@ -67,7 +77,6 @@ const EditDialog = (props: {
                         )}
                     </TableBody>
                 </Table>
-                {/*</TableContainer>*/}
             </DialogContent>
             <DialogActions>
                 <Button onClick={props.onCancel}>Cancel</Button>

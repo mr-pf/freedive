@@ -53,7 +53,8 @@ const EditScenarioDialog = (props: { isOpen: boolean, scenario: Scenario, onClos
             max: 120,
             step: 1,
             unit: 'm',
-            onChange: updateStartDepth
+            onChange: updateStartDepth,
+            tooltip: "Depth at which the diver starts the freefall"
         },
         {
             label: 'start velocity',
@@ -62,16 +63,18 @@ const EditScenarioDialog = (props: { isOpen: boolean, scenario: Scenario, onClos
             max: 3,
             step: 0.1,
             unit: 'm/s',
-            onChange: updateStartVelocity
+            onChange: updateStartVelocity,
+            tooltip: "Velocity when the diver starts freefalling"
         },
         {
-            label: 'Volume compressible',
+            label: 'Extra weight',
             value: scenarioEdited.extraWeight,
             min: 0,
             max: 10,
             step: 0.5,
             unit: 'Kg',
-            onChange: updateExtraWeight
+            onChange: updateExtraWeight,
+            tooltip: "Any weight that the diver adds on the weight belt or with a neck weight"
         }
     ]
 

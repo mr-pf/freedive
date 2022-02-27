@@ -1,12 +1,12 @@
 import {Scenario} from "../../models/diver-case";
 
 export const getScenarioName = (scenario: Scenario) => {
-    return `id:${scenario.id} sd:${scenario.startDepth} sv:${scenario.startVelocity} ew:${scenario.extraWeight}`
+    return `sd:${scenario.startDepth} sv:${scenario.startVelocity} ew:${scenario.extraWeight}`
 }
 
-export const reshapeData = (x: number[], y: { [name: string]: (number | null)[] }) => {
+export const reshapeData = (x: number[], y: (number | null)[][], labels: string[]) => {
     return x.map((d, i) => {
-        let scenarioValues = Object.assign({}, ...Object.keys(y).map((id) => ({[id]: y[id][i]})));
+        let scenarioValues = Object.assign({}, ...labels.map((label, j) => ({[label]: y[j][i]})));
         return {
             depth: d,
             ...scenarioValues
@@ -14,14 +14,9 @@ export const reshapeData = (x: number[], y: { [name: string]: (number | null)[] 
     })
 }
 
-export const colorPalette: {[key: string]: string} = {
-    "0": "#e60049",
-    "1": "#0bb4ff",
-    "2": "#50e991",
-    "3": "#e6d800",
-    "4": "#9b19f5",
-    "5": "#ffa300",
-    "6": "#dc0ab4",
-    "7": "#b3d4ff",
-    "8": "#00bfa0"
-}
+export const colorPalette1: string[] = [
+    "#e60049", "#0bb4ff", "#50e991", "#e6d800", "#9b19f5", "#ffa300", "#dc0ab4", "#b3d4ff", "#00bfa0"]
+
+export const colorPalette2: string[] = [
+    "#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"]
+
