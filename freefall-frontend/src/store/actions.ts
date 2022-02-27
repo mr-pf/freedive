@@ -9,7 +9,7 @@ export const getSolutionsAction = (diverCase: DiverCase) => {
     return (dispatch: Dispatch) => {
 
         const handleSuccess = (solutions: DiverCaseSolutions) => {
-            console.log(`Solutions successfully received:\n${solutions}`)
+            console.log(`Solutions successfully received`)
             dispatch(solutionActions.putSolutions(solutions))
         }
 

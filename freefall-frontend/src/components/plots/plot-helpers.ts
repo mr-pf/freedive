@@ -1,14 +1,20 @@
 import {Scenario} from "../../models/diver-case";
 
 export const getScenarioName = (scenario: Scenario) => {
-    return `sd:${scenario.startDepth} sv:${scenario.startVelocity} ew:${scenario.extraWeight}`
+    return `sd:${scenario.start_depth} sv:${scenario.start_velocity} ew:${scenario.extra_weight}`
 }
 
-export const reshapeData = (x: number[], y: (number | null)[][], labels: string[]) => {
+export const getScenariosById = (scenarios: Scenario[]) => {
+    return Object.assign({}, ...scenarios.map(s => ({[s.id]: s})))
+}
+
+export const reshapeAndRoundData = (x: number[], y: number[][], labels: string[]) => {
     return x.map((d, i) => {
-        let scenarioValues = Object.assign({}, ...labels.map((label, j) => ({[label]: y[j][i]})));
+        let scenarioValues = Object.assign({}, ...labels.map((label, j) => {
+            return {[label]: Math.round(y[j][i] * 100) / 100};
+        }));
         return {
-            depth: d,
+            x: d,
             ...scenarioValues
         }
     })

@@ -10,6 +10,7 @@ from solution import FreefallEquationsSolutions, StaticForcesSolutions, \
 def solve_diver_case(diver_case: DiverCase) -> DiverCaseSolutions:
     diver, scenarios, plot_parameters = diver_case.diver, diver_case.scenarios, diver_case.plot_parameters
     return DiverCaseSolutions(
+        diver_case=diver_case,
         static_forces=solve_static_forces(diver, scenarios, plot_parameters),
         terminal_velocity=solve_terminal_velocity(diver, scenarios, plot_parameters),
         freefall_equations=solve_freefall_equation(diver, scenarios, plot_parameters)
@@ -62,7 +63,6 @@ def solve_freefall_equation(diver: Diver, scenarios: list[Scenario],
                             plot_parameters: PlotParameters) -> FreefallEquationsSolutions:
     scenario_ids = []
     time_array = get_linspace(plot_parameters.time_range)
-    time_array = np.insert(time_array, 0, 0)
     depth_arrays = []
     velocity_arrays = []
 
@@ -73,15 +73,17 @@ def solve_freefall_equation(diver: Diver, scenarios: list[Scenario],
                                               volume_compressible=diver.volume_compressible,
                                               drag_coefficient=diver.drag_coefficient, drag_area=diver.drag_area)
         result = odeint(ode_system, y0=initial_conditions, t=time_array, tfirst=True)
-
         depth_array = result.T[0]
-        depth_array = np.insert(depth_array, 0, 0)
         velocity_array = result.T[1]
+
+        depth_array = np.insert(depth_array, 0, 0)
         velocity_array = np.insert(velocity_array, 0, s.start_velocity)
 
         scenario_ids.append(s.id)
         depth_arrays.append(list(depth_array))
         velocity_arrays.append(list(velocity_array))
+
+    time_array = np.insert(time_array, 0, 0)
 
     return FreefallEquationsSolutions(
         scenario_ids=scenario_ids,

@@ -7,8 +7,6 @@ const getSolutions = async (diverCase: DiverCase,
                             callbackSuccess: (solutions: DiverCaseSolutions) => void,
                             callbackError: (error: any) => void) => {
 
-    const body = serializeDiverCase(diverCase)
-
     const response = await fetch(
         url,
         {
@@ -16,7 +14,7 @@ const getSolutions = async (diverCase: DiverCase,
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: body,
+            body: JSON.stringify(diverCase),
         })
         .then(response => {
             return response.json()
@@ -30,15 +28,6 @@ const getSolutions = async (diverCase: DiverCase,
         .catch(error => {
             callbackError(error)
         })
-}
-
-
-export const serializeDiverCase = (diverCase: DiverCase) => {
-
-    const camelToSnakeCase = (text: string) => text.replace(/[A-Z]/g, c => `_${c.toLowerCase()}`);
-
-    const jsonString = JSON.stringify(diverCase)
-    return camelToSnakeCase(jsonString)
 }
 
 

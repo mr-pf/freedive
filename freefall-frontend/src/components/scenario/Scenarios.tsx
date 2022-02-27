@@ -21,7 +21,7 @@ import {Fragment, useState} from "react";
 import EditScenarioDialog from "./EditScenarioDialog";
 import {Scenario} from "../../models/diver-case";
 
-const defaultScenario: Scenario = {id: "0", startDepth: 20, startVelocity: 1.5, extraWeight: 0}
+const defaultScenario: Scenario = {id: "0", start_depth: 20, start_velocity: 1.5, extra_weight: 0}
 
 const Scenarios = () => {
 
@@ -80,9 +80,9 @@ const Scenarios = () => {
                                     key={s.id}
                                     sx={{'&:last-child td, &:last-child th': {border: 0}}}
                                 >
-                                    <TableCell align="right">{s.startDepth}</TableCell>
-                                    <TableCell align="right">{s.startVelocity}</TableCell>
-                                    <TableCell align="right">{s.extraWeight}</TableCell>
+                                    <TableCell align="right">{s.start_depth}</TableCell>
+                                    <TableCell align="right">{s.start_velocity}</TableCell>
+                                    <TableCell align="right">{s.extra_weight}</TableCell>
                                     <TableCell align="right">
                                         <Stack direction="row">
                                             <IconButton onClick={() => handleEditScenario(s)} sx={{width: 30, height: 13}}>

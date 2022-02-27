@@ -57,7 +57,7 @@ const EditDialog = (props: {
                                 <TableCell align="left">
                                     <Stack direction={"row"} spacing={1}>
                                         <div>{d.label}</div>
-                                        <Tooltip title={d.tooltip}>
+                                        <Tooltip title={d.tooltip} enterTouchDelay={0}>
                                             <HelpOutlineOutlinedIcon
                                                 sx={{width: 14, height: 14, verticalAlign: "bottom"}}/>
                                         </Tooltip>
