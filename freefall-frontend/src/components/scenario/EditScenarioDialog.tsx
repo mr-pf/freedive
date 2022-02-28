@@ -1,7 +1,7 @@
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {useEffect, useState} from "react";
 import {diverCaseActions} from "../../store/diver-case-slice";
-import EditDialog, {EditDialogDisplayData} from "../shared/EditDialog";
+import EditDialog, {EditDialogDisplayData} from "../layout/EditDialog";
 import {Scenario} from "../../models/diver-case";
 
 
@@ -17,21 +17,21 @@ const EditScenarioDialog = (props: { isOpen: boolean, scenario: Scenario, onClos
 
     function updateStartDepth(value: number) {
         setScenarioEdited(prev => {
-                return {...prev, startDepth: value}
+                return {...prev, start_depth: value}
             }
         )
     }
 
     function updateStartVelocity(value: number) {
         setScenarioEdited(prev => {
-                return {...prev, startVelocity: value}
+                return {...prev, start_velocity: value}
             }
         )
     }
 
     function updateExtraWeight(value: number) {
         setScenarioEdited(prev => {
-                return {...prev, extraWeight: value}
+                return {...prev, extra_weight: value}
             }
         )
     }
@@ -48,7 +48,7 @@ const EditScenarioDialog = (props: { isOpen: boolean, scenario: Scenario, onClos
     const displayData: EditDialogDisplayData[] = [
         {
             label: 'Start depth',
-            value: scenarioEdited.startDepth,
+            value: scenarioEdited.start_depth,
             min: 0,
             max: 120,
             step: 1,
@@ -58,7 +58,7 @@ const EditScenarioDialog = (props: { isOpen: boolean, scenario: Scenario, onClos
         },
         {
             label: 'start velocity',
-            value: scenarioEdited.startVelocity,
+            value: scenarioEdited.start_velocity,
             min: 0,
             max: 3,
             step: 0.1,
@@ -68,7 +68,7 @@ const EditScenarioDialog = (props: { isOpen: boolean, scenario: Scenario, onClos
         },
         {
             label: 'Extra weight',
-            value: scenarioEdited.extraWeight,
+            value: scenarioEdited.extra_weight,
             min: 0,
             max: 10,
             step: 0.5,

@@ -5,21 +5,22 @@ import {Diver, DiverCase, PlotParameters, Scenario} from "../models/diver-case";
 const initialState: DiverCase = {
     diver: {
         weight: 66,
-        volumeStatic: 0.062,
-        volumeCompressible: 0.006,
-        dragArea: 0.07,
-        dragCoefficient: 0.3
+        volume_static: 0.062,
+        volume_compressible: 0.006,
+        drag_area: 0.07,
+        drag_coefficient: 0.3
     },
     scenarios: [
-        {id: "0", startDepth: 20, startVelocity: 1.4, extraWeight: 0},
-        {id: "1", startDepth: 20, startVelocity: 0.8, extraWeight: 0},
-        {id: "2", startDepth: 30, startVelocity: 1.4, extraWeight: 1},
-        {id: "3", startDepth: 30, startVelocity: 0.8, extraWeight: 1},
+        {id: "0", start_depth: 20, start_velocity: 1.4, extra_weight: 0},
+        {id: "1", start_depth: 20, start_velocity: 0.8, extra_weight: 0},
+        {id: "2", start_depth: 30, start_velocity: 1.4, extra_weight: 0},
+        {id: "3", start_depth: 30, start_velocity: 0.8, extra_weight: 0},
+
     ],
-    plotParameters: {
-        timeRange: {min: 0, max: 120, numPoints: 121},
-        depthRange: {min: 0, max: 120, numPoints: 121},
-        velocityRange: {min: 0, max: 3, numPoints: 121}
+    plot_parameters: {
+        time_range: {min: 0, max: 120},
+        depth_range: {min: 0, max: 120},
+        velocity_range: {min: 0, max: 3}
     }
 };
 
@@ -35,11 +36,10 @@ const diverCaseSlice = createSlice({
             state.scenarios.push(action.payload);
         },
         deleteScenario(state, action: PayloadAction<Scenario>) {
-            console.log(action.payload)
             state.scenarios = state.scenarios.filter(s => s.id !== action.payload.id)
         },
         setPlotParameters(state, action: PayloadAction<PlotParameters>) {
-            state.plotParameters = action.payload;
+            state.plot_parameters = action.payload;
         }
     }
 });

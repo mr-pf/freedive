@@ -1,7 +1,7 @@
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {useState} from "react";
 import {diverCaseActions} from "../../store/diver-case-slice";
-import EditDialog, {EditDialogDisplayData} from "../shared/EditDialog";
+import EditDialog, {EditDialogDisplayData} from "../layout/EditDialog";
 
 
 const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void }) => {
@@ -20,28 +20,28 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
 
     function updateVolumeCompressible(value: number) {
         setDiverEdited(prev => {
-                return {...prev, volumeCompressible: value / 1000}
+                return {...prev, volume_compressible: value / 1000}
             }
         )
     }
 
     function updateVolumeStatic(value: number) {
         setDiverEdited(prev => {
-                return {...prev, volumeStatic: value / 1000}
+                return {...prev, volume_static: value / 1000}
             }
         )
     }
 
     function updateDragArea(value: number) {
         setDiverEdited(prev => {
-                return {...prev, dragArea: Math.round(value * 100) / 100}
+                return {...prev, drag_area: Math.round(value * 100) / 100}
             }
         )
     }
 
     function updateDragCoefficient(value: number) {
         setDiverEdited(prev => {
-                return {...prev, dragCoefficient: Math.round(value * 1000) / 1000}
+                return {...prev, drag_coefficient: Math.round(value * 1000) / 1000}
             }
         )
     }
@@ -68,7 +68,7 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
         },
         {
             label: 'Static volume',
-            value: diverEdited.volumeStatic * 1000,
+            value: diverEdited.volume_static * 1000,
             min: 0,
             max: 150,
             step: 1,
@@ -78,7 +78,7 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
         },
         {
             label: 'Compressible volume',
-            value: diverEdited.volumeCompressible * 1000,
+            value: diverEdited.volume_compressible * 1000,
             min: 0,
             max: 10,
             step: 0.5,
@@ -88,7 +88,7 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
         },
         {
             label: 'Drag Area',
-            value: diverEdited.dragArea,
+            value: diverEdited.drag_area,
             min: 0.02,
             max: 0.12,
             step: 0.005,
@@ -100,7 +100,7 @@ const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void
         },
         {
             label: 'Drag coefficient',
-            value: diverEdited.dragCoefficient,
+            value: diverEdited.drag_coefficient,
             min: 0.2,
             max: 0.4,
             step: 0.01,

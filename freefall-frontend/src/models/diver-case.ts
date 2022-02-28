@@ -1,32 +1,31 @@
 export type Diver = {
     weight: number;
-    volumeStatic: number;
-    volumeCompressible: number;
-    dragArea: number;
-    dragCoefficient: number;
+    volume_static: number;
+    volume_compressible: number;
+    drag_area: number;
+    drag_coefficient: number;
 }
 
 export type Scenario = {
     id: string;
-    startDepth: number;
-    startVelocity: number;
-    extraWeight: number;
+    start_depth: number;
+    start_velocity: number;
+    extra_weight: number;
 }
 
 export type PlotRange = {
     min: number;
     max: number;
-    numPoints: number;
 }
 
 export type PlotParameters = {
-    timeRange: PlotRange;
-    depthRange: PlotRange;
-    velocityRange: PlotRange;
+    time_range: PlotRange;
+    depth_range: PlotRange;
+    velocity_range: PlotRange;
 }
 
 export type DiverCase = {
     diver: Diver;
     scenarios: Scenario[];
-    plotParameters: PlotParameters;
+    plot_parameters: PlotParameters;
 }

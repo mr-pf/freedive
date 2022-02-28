@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from diver_case import DiverCase
+
 
 @dataclass
 class FreefallEquationsSolutions:
@@ -26,6 +28,7 @@ class TerminalVelocitySolutions:
 
 @dataclass
 class DiverCaseSolutions:
+    diver_case: DiverCase
     static_forces: StaticForcesSolutions
     terminal_velocity: TerminalVelocitySolutions
     freefall_equations: FreefallEquationsSolutions

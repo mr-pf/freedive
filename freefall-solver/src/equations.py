@@ -34,7 +34,7 @@ def get_resistive_coefficient(drag_coefficient: float, drag_area: float):
 
 def drag_force(velocity: np.ndarray, drag_coefficient: float, drag_area: float) -> np.ndarray:
     resistive_coefficient = get_resistive_coefficient(drag_coefficient, drag_area)
-    return - resistive_coefficient * velocity ** 2
+    return - resistive_coefficient * velocity * abs(velocity)
 
 
 def terminal_velocity(depth: np.ndarray, mass: float, drag_coefficient: float, drag_area: float,
@@ -45,10 +45,10 @@ def terminal_velocity(depth: np.ndarray, mass: float, drag_coefficient: float, d
 
     velocity_square_root = static_forces / resistive_coefficient
 
-    def square_and_truncate(v):
-        return v ** 0.5 if v >= 0 else None
+    def square_root_with_sign(v):
+        return v / abs(v) * abs(v) ** 0.5
 
-    return np.array([square_and_truncate(v) for v in velocity_square_root])
+    return np.array([square_root_with_sign(v) for v in velocity_square_root])
 
 
 def terminal_velocity_final(mass: float, drag_coefficient: float, drag_area: float, volume_static: float) \
@@ -58,16 +58,20 @@ def terminal_velocity_final(mass: float, drag_coefficient: float, drag_area: flo
 
 def get_ode_system(mass: float, volume_static: float,
                    volume_compressible: float, drag_coefficient: float, drag_area: float):
+    resistive_coefficient = get_resistive_coefficient(drag_coefficient, drag_area)
+
     def ode_system(_, values):
         d, v = values
-        return [
-            v,
-            (
-                    mass * gravitational_acceleration /
-                    - buoyancy_coefficient * volume_static /
-                    - buoyancy_coefficient * (volume_compressible * 10 / (d + 10))
-                    - get_resistive_coefficient(drag_coefficient, drag_area) * v ** 2
-            ) / mass
-        ]
+        if d <= 0:
+            return [0, 0]
+        else:
+            return [
+                v,
+                (mass * gravitational_acceleration
+                 - buoyancy_coefficient * volume_static
+                 - buoyancy_coefficient * (volume_compressible * 10 / (d + 10))
+                 - resistive_coefficient * abs(v) * v
+                 ) / mass
+            ]
 
     return ode_system

@@ -56,7 +56,7 @@ def test_drag_force():
 
 def test_terminal_velocity():
     result = equations.terminal_velocity(DEPTH, MASS, DRAG_COEFFICIENT, DRAG_AREA, VOLUME_STATIC, VOLUME_COMPRESSIBLE)
-    expected = np.array([None, None, 1.34])
+    expected = np.array([-1.81, -0.7, 1.34])
 
     result_rounded = np.array([round(v, 2) if v else None for v in result])
 

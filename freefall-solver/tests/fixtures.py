@@ -3,9 +3,9 @@ import json
 from diver_case import Diver, PlotRange, PlotParameters, Scenario, DiverCase
 
 PLOT_PARAMETERS = PlotParameters(
-    time_range=PlotRange(0, 30, 2),
-    depth_range=PlotRange(0, 100, 2),
-    velocity_range=PlotRange(0, 3, 4)
+    time_range=PlotRange(0, 30),
+    depth_range=PlotRange(0, 100),
+    velocity_range=PlotRange(0, 3)
 )
 DIVER = Diver(
     weight=64,
