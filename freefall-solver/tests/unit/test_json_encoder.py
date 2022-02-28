@@ -1,7 +1,10 @@
+from diver_case import DiverCase
+from fixtures import DIVER_CASE
 from json_encoder import CustomEncoder
 from solution import DiverCaseSolutions, StaticForcesSolutions, TerminalVelocitySolutions, FreefallEquationsSolutions
 
 SCENARIO_SOLUTIONS = DiverCaseSolutions(
+    diver_case=DIVER_CASE,
     static_forces=StaticForcesSolutions(
         weights=[9],
         depth=[1],

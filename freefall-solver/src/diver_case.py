@@ -11,7 +11,7 @@ class Diver:
     drag_coefficient: float
 
 
-PlotRange = namedtuple('PlotRange', 'min max num_points')
+PlotRange = namedtuple('PlotRange', 'min max')
 
 
 @dataclass

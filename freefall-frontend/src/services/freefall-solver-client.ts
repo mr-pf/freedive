@@ -1,12 +1,13 @@
 import {DiverCase} from "../models/diver-case";
 import {DiverCaseSolutions} from "../models/solution";
+import {getSolverUrl} from "../config";
 
-const url = 'http://localhost:8080/'
 
 const getSolutions = async (diverCase: DiverCase,
                             callbackSuccess: (solutions: DiverCaseSolutions) => void,
                             callbackError: (error: any) => void) => {
 
+    const url = getSolverUrl()
     const response = await fetch(
         url,
         {

@@ -6,7 +6,7 @@ import {colorPalette2, getScenarioName, getScenariosById, reshapeAndRoundData} f
 
 const FreefallEquationsDepthPlot = () => {
 
-    const {scenarios} = useAppSelector(state => state.solutions.diver_case);
+    const {scenarios, plot_parameters} = useAppSelector(state => state.solutions.diver_case);
     const {scenario_ids, time, depth} = useAppSelector(state => state.solutions.freefall_equations);
 
     const scenariosById = getScenariosById(scenarios)
@@ -20,17 +20,20 @@ const FreefallEquationsDepthPlot = () => {
             <CardContent>
                 <ResponsiveContainer width="95%" height={230}>
                     <LineChart data={data}>
+                        <CartesianGrid/>
                         <XAxis dataKey="x"
                                type="number"
                                allowDecimals={false}
                                stroke="white"
                                strokeWidth={1}
-                               label={{ value: "time [s]", dy: 20, fill: "white"}}
+                               label={{value: "time [s]", dy: 20, fill: "white"}}
+                               domain={[plot_parameters.time_range.min, plot_parameters.time_range.max]}
                         />
                         <YAxis allowDecimals={false}
                                stroke="white"
                                strokeWidth={1}
-                               label={{ value: "depth [m]", angle: -90,   dx: -20, fill: "white"}}
+                               label={{value: "depth [m]", angle: -90, dx: -20, fill: "white"}}
+                               domain={[plot_parameters.depth_range.min, plot_parameters.depth_range.max]}
                         />
                         {
                             labels.map((l, i) => <Line key={i}
@@ -43,7 +46,6 @@ const FreefallEquationsDepthPlot = () => {
                                 />
                             )
                         }
-                        <CartesianGrid/>
                         <Tooltip/>
                         <Legend wrapperStyle={{bottom: -20}}/>
                     </LineChart>

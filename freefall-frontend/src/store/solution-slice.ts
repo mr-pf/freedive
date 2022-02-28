@@ -6,9 +6,9 @@ let initialState: DiverCaseSolutions = {
         diver: {weight: 0, volume_static: 0, volume_compressible: 0, drag_area: 0, drag_coefficient: 0},
         scenarios: [],
         plot_parameters: {
-            time_range: {min: 0, max: 0, num_points: 0},
-            depth_range: {min: 0, max: 0, num_points: 0},
-            velocity_range: {min: 0, max: 0, num_points: 0}}
+            time_range: {min: 0, max: 0},
+            depth_range: {min: 0, max: 0},
+            velocity_range: {min: 0, max: 0}}
     },
     static_forces: {weights: [], depth: [], static_forces_total: []},
     terminal_velocity: {weights: [], depth: [], variable: [], final: []},

@@ -16,7 +16,6 @@ export type Scenario = {
 export type PlotRange = {
     min: number;
     max: number;
-    num_points: number;
 }
 
 export type PlotParameters = {

@@ -14,22 +14,23 @@ const StaticForcesPlot = () => {
 
     return (
         <Card>
-            <CardHeader title="Static forces" subheader="For different extra weights"/>
+            <CardHeader title="Static forces" subheader="For different weights"/>
             <CardContent>
                 <ResponsiveContainer width="95%" height={230}>
                     <LineChart data={data}>
+                        <CartesianGrid/>
                         <XAxis dataKey="x"
                                type="number"
                                allowDecimals={false}
                                domain={[plot_parameters.depth_range.min, plot_parameters.depth_range.max]}
                                stroke="white"
                                strokeWidth={1}
-                               label={{ value: "depth [m]", dy: 20, fill: "white"}}
+                               label={{value: "depth [m]", dy: 20, fill: "white"}}
                         />
                         <YAxis allowDecimals={false}
                                stroke="white"
                                strokeWidth={1}
-                               label={{ value: "force [N]", angle: -90,   dx: -10, fill: "white"}}
+                               label={{value: "force [N]", angle: -90, dx: -10, fill: "white"}}
                         />
                         {
                             labels.map((l, i) => <Line key={i}
@@ -42,7 +43,6 @@ const StaticForcesPlot = () => {
                                 />
                             )
                         }
-                        <CartesianGrid/>
                         <Tooltip/>
                         <Legend wrapperStyle={{bottom: -20}}/>
                     </LineChart>

@@ -25,10 +25,11 @@ const TerminalVelocityPLot = () => {
 
     return (
         <Card>
-            <CardHeader title="Terminal velocity" subheader="For different extra weights"/>
+            <CardHeader title="Terminal velocity" subheader="For different weights"/>
             <CardContent>
                 <ResponsiveContainer width="95%" height={230}>
                     <LineChart data={data}>
+                        <CartesianGrid/>
                         <XAxis dataKey="x"
                                type="number"
                                allowDecimals={false}
@@ -62,7 +63,6 @@ const TerminalVelocityPLot = () => {
                                 }
                             )
                         }
-                        <CartesianGrid/>
                         <Tooltip/>
                         <Legend wrapperStyle={{bottom: -20}}/>
                     </LineChart>

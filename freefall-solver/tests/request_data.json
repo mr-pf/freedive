@@ -35,18 +35,15 @@
   "plot_parameters": {
     "time_range": {
       "min": 0,
-      "max": 30,
-      "num_points": 2
+      "max": 30
     },
     "depth_range": {
       "min": 0,
-      "max": 100,
-      "num_points": 2
+      "max": 100
     },
     "velocity_range": {
       "min": 0,
-      "max": 3,
-      "num_points": 4
+      "max": 3
     }
   }
 }
