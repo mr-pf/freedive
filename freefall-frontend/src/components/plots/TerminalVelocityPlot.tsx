@@ -34,6 +34,7 @@ const TerminalVelocityPLot = () => {
                                type="number"
                                allowDecimals={false}
                                domain={[plot_parameters.depth_range.min, plot_parameters.depth_range.max]}
+                               allowDataOverflow
                                stroke="white"
                                label={{value: "depth [m]", dy: 20, fill: "white"}}
 

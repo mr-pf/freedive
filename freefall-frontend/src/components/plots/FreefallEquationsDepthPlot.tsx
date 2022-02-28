@@ -28,12 +28,14 @@ const FreefallEquationsDepthPlot = () => {
                                strokeWidth={1}
                                label={{value: "time [s]", dy: 20, fill: "white"}}
                                domain={[plot_parameters.time_range.min, plot_parameters.time_range.max]}
+                               allowDataOverflow
                         />
                         <YAxis allowDecimals={false}
                                stroke="white"
                                strokeWidth={1}
                                label={{value: "depth [m]", angle: -90, dx: -20, fill: "white"}}
-                               domain={[plot_parameters.depth_range.min, plot_parameters.depth_range.max]}
+                               domain={[plot_parameters.depth_range.min, 120]}
+                               allowDataOverflow
                         />
                         {
                             labels.map((l, i) => <Line key={i}

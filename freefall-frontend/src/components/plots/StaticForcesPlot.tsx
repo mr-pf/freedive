@@ -23,6 +23,7 @@ const StaticForcesPlot = () => {
                                type="number"
                                allowDecimals={false}
                                domain={[plot_parameters.depth_range.min, plot_parameters.depth_range.max]}
+                               allowDataOverflow
                                stroke="white"
                                strokeWidth={1}
                                label={{value: "depth [m]", dy: 20, fill: "white"}}
