@@ -29,7 +29,7 @@ const ChangeValueSlider = (
             <IconButton onClick={decrementValue}>
                 <RemoveCircleOutlineOutlinedIcon/>
             </IconButton>
-            <Slider sx={{minWidth: 100}}
+            <Slider sx={{minWidth: 50}}
                     value={value}
                     min={props.min}
                     max={props.max}
@@ -40,7 +40,6 @@ const ChangeValueSlider = (
             <IconButton onClick={incrementValue}>
                 <AddCircleOutlineOutlinedIcon/>
             </IconButton>
-
         </Stack>
     );
 }

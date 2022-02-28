@@ -1,7 +1,7 @@
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {useState} from "react";
 import {diverCaseActions} from "../../store/diver-case-slice";
-import EditDialog, {EditDialogDisplayData} from "../shared/EditDialog";
+import EditDialog, {EditDialogDisplayData} from "../layout/EditDialog";
 
 
 const EditDiverAttributesDialog = (props: { isOpen: boolean, onClose: () => void }) => {
