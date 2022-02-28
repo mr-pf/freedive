@@ -10,7 +10,7 @@ import {
     TableCell,
     tableCellClasses,
     TableContainer,
-    TableRow
+    TableRow, Typography
 } from "@mui/material";
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import EditDiverAttributesDialog from "./EditDiverAttributesDialog";
@@ -38,11 +38,17 @@ const DiverAttributes = () => {
         ['Drag coefficient', diver.drag_coefficient, '  ']
     ]
 
+    const diverText = 'The calculations are very sensitive to the relation between volume and weight.' +
+        ' If not chosen carefully, the diver will either sink like a rock or float back to the surface.'
+
     return (
         <Fragment>
             <TableContainer component={Card}>
                 <CardHeader title="Diver"/>
                 <CardContent>
+                    <Typography padding={2}>
+                        {diverText}
+                    </Typography>
                     <Table
                         aria-label="scenarios"
                         size="small"
