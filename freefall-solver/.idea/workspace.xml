@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e95d731-807c-40c6-90cc-9e52c2c5b428" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../freefall-frontend/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../freefall-frontend/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../freefall-frontend/src/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/FreefallEquationsDepthPlot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/FreefallEquationsDepthPlot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/StaticForcesPlot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/StaticForcesPlot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/TerminalVelocityPlot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/components/plots/TerminalVelocityPlot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/models/diver-case.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/models/diver-case.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/services/freefall-solver-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/services/freefall-solver-client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/store/diver-case-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/store/diver-case-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/store/solution-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../freefall-frontend/src/store/solution-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/test/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/test/fixtures/request_data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../freefall-frontend/src/test/fixtures/response_data.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diver_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/diver_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/equations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/json_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/json_encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/fixtures.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/fixtures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/request_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/request_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/test_json_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_json_encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/test_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_solver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +233,7 @@
       <workItem from="1645303609143" duration="1667000" />
       <workItem from="1645306753801" duration="390000" />
       <workItem from="1645307626012" duration="506000" />
-      <workItem from="1645308751607" duration="71753000" />
+      <workItem from="1645308751607" duration="73205000" />
     </task>
     <servers />
   </component>
@@ -283,11 +258,6 @@
           <url>file://$PROJECT_DIR$/tests/surface/test_function.py</url>
           <line>12</line>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/main.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
