@@ -27,7 +27,7 @@ def assert_freefall_equation_solutions(solution: FreefallEquationsSolutions):
 
 
 def assert_terminal_velocity(solution: TerminalVelocitySolutions):
-    assert len(solution.depth) == 100
+    assert len(solution.depth) == 101
     assert len(solution.variable) == 2
     assert len(solution.final) == 2
     for total_weight in [64, 66]:
@@ -35,7 +35,7 @@ def assert_terminal_velocity(solution: TerminalVelocitySolutions):
 
 
 def assert_static_forces(solution: StaticForcesSolutions):
-    assert len(solution.depth) == 100
+    assert len(solution.depth) == 101
     assert len(solution.static_forces_total) == 2
     for total_weight in [64, 66]:
         assert total_weight in solution.weights
